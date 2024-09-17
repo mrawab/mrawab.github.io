@@ -115,14 +115,42 @@ button:hover {
     margin-top: 10px;
     display: none;
 }
+
+/* Telegram Button Styling */
+#projects .telegram-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0088cc; /* Telegram color */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin: 2rem auto;
+}
+
+#projects .telegram-btn:hover {
+    background-color: #005f99; /* Darker telegram color on hover */
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 main {
     flex-grow: 1;
 } 
-/* Main content area */
+
+/* Main content area 
 .main-content {
     min-height: 100vh;
-    padding-bottom: 3rem; /* Space for the footer */
-}
+    padding-bottom: 3rem; /* Space for the footer 
+}/*
 
 /* Footer Styling */
 footer {
