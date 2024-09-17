@@ -19,24 +19,26 @@
         </nav>
     </header>
 
-    <!-- Arrow at the top to scroll to bottom -->
-    <div class="arrow-wrapper">
-        <button id="scroll-to-bottom" class="scroll-arrow">&#8595;</button>
-    </div>
+    <!-- Scroll arrows -->
+    <button id="scroll-to-top" class="scroll-arrow">&#8593;</button>
+    <button id="scroll-to-bottom" class="scroll-arrow">&#8595;</button>
 
     <section id="hero" class="section">
         <div class="intro fade-in">
             <h2>Hi, I'm Awab Azhari</h2>
             <p>Exploring the world of electronics engineering and Python programming.</p>
         </div>
+        <div class="arrow-wrapper">
+            <button class="scroll-arrow scroll-to-next">&#8595;</button>
+        </div>
     </section>
 
     <section id="about" class="section">
         <h2>About Me</h2>
         <p>I am a passionate electronics engineer delving into Python programming. This website showcases my work, including beginner-level Python projects.</p>
-        <!-- Scroll arrow for about section -->
         <div class="arrow-wrapper">
-            <button class="scroll-arrow scroll-to-top">&#8593;</button>
+            <button class="scroll-arrow scroll-to-prev">&#8593;</button>
+            <button class="scroll-arrow scroll-to-next">&#8595;</button>
         </div>
     </section>
 
@@ -46,9 +48,9 @@
             <li><strong>Education:</strong> Bachelor of Electronics Engineering</li>
             <li><strong>Skills:</strong> Python (Beginner), Circuit Design, etc.</li>
         </ul>
-        <!-- Scroll arrow for resume section -->
         <div class="arrow-wrapper">
-            <button class="scroll-arrow scroll-to-top">&#8593;</button>
+            <button class="scroll-arrow scroll-to-prev">&#8593;</button>
+            <button class="scroll-arrow scroll-to-next">&#8595;</button>
         </div>
     </section>
 
@@ -57,11 +59,11 @@
         <div class="project">
             <h3>Project 1: Telegram bot</h3>
             <p>A Python-based Telegram bot for study.</p>
-            <a href="https://t.me/MRAWABBOT">My Telegram Bot</a>
+            <a href="https://t.me/MRAWABBOT" class="project-link">My Telegram Bot</a>
         </div>
-        <!-- Scroll arrow for projects section -->
         <div class="arrow-wrapper">
-            <button class="scroll-arrow scroll-to-top">&#8593;</button>
+            <button class="scroll-arrow scroll-to-prev">&#8593;</button>
+            <button class="scroll-arrow scroll-to-next">&#8595;</button>
         </div>
     </section>
 
@@ -74,22 +76,16 @@
             <button type="submit">Send</button>
             <p id="error-message" style="color: red; display: none;">Please fill out all fields correctly.</p>
         </form>
-        <!-- Scroll arrow for contact section -->
         <div class="arrow-wrapper">
+            <button class="scroll-arrow scroll-to-prev">&#8593;</button>
             <button class="scroll-arrow scroll-to-top">&#8593;</button>
         </div>
     </section>
 
-    <!-- Footer at the end -->
     <footer id="footer">
         <p>&copy; 2024 Awab Azhari</p>
-        <!-- Arrow at the footer to scroll to top -->
-        <div class="arrow-wrapper">
-            <button id="scroll-to-top" class="scroll-arrow">&#8593;</button>
-        </div>
     </footer>
 
-    <!-- Link to external JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
