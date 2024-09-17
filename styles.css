@@ -24,10 +24,11 @@ header h1 {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex; /* Ensure horizontal layout */
+    justify-content: center; /* Center the navigation items */
 }
 
 .nav-header ul li {
-    display: inline-block; /* For horizontal layout on desktop */
     margin: 0 0.5rem;
 }
 
@@ -44,24 +45,6 @@ header h1 {
 .nav-button:hover {
     background-color: #555;
     transform: scale(1.05);
-}
-
-/* Responsive Design for Navigation */
-@media (max-width: 768px) {
-    .nav-header ul {
-        text-align: center;
-        padding: 0;
-    }
-
-    .nav-header ul li {
-        display: block; /* For vertical layout on mobile */
-        margin: 0.5rem 0;
-    }
-
-    .nav-button {
-        font-size: 1.2rem;
-        padding: 0.8rem 1.2rem;
-    }
 }
 
 /* Section Styles */
