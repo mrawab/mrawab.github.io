@@ -1,13 +1,20 @@
-// Smooth scrolling for navigation buttons
+// Smooth scrolling for navigation buttons and hide other sections
 document.querySelectorAll('.nav-button').forEach(button => {
     button.addEventListener('click', function(e) {
         e.preventDefault();
+        
+        // Hide all sections
+        const allSections = document.querySelectorAll('.section');
+        allSections.forEach(section => section.classList.add('hidden'));
+        
+        // Scroll to the target section and display it
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             targetElement.scrollIntoView({
                 behavior: 'smooth'
             });
+            targetElement.classList.remove('hidden');  // Show the section
         }
     });
 });
