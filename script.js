@@ -17,10 +17,11 @@ const sections = document.querySelectorAll('.section');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
+            entry.target.classList.remove('hidden'); // Ensure section becomes visible
+            entry.target.classList.add('fade-in'); // Apply fade-in class when intersecting
             entry.target.classList.remove('fade-out');
         } else {
-            entry.target.classList.add('fade-out');
+            entry.target.classList.add('fade-out'); // Apply fade-out when leaving view
             entry.target.classList.remove('fade-in');
         }
     });
@@ -30,7 +31,7 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// Scroll to the next and previous section with arrows
+// Scroll to the next section with arrows
 document.querySelectorAll('.scroll-to-next').forEach(button => {
     button.addEventListener('click', function() {
         const nextSection = this.closest('.section').nextElementSibling;
@@ -40,6 +41,7 @@ document.querySelectorAll('.scroll-to-next').forEach(button => {
     });
 });
 
+// Scroll to the previous section with arrows
 document.querySelectorAll('.scroll-to-prev').forEach(button => {
     button.addEventListener('click', function() {
         const prevSection = this.closest('.section').previousElementSibling;
