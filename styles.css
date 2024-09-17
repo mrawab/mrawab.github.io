@@ -15,6 +15,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 header, footer {
@@ -22,17 +23,35 @@ header, footer {
     padding: 20px;
     width: 100%;
     text-align: center;
+    position: fixed;
+    left: 0;
+    z-index: 10;
 }
 
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+/* Header styling */
 header h1 {
     color: #fff;
-    margin-bottom: 10px;
+    margin: 0;
+}
+
+/* Navigation styling */
+nav {
+    margin: 0 auto;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    margin: 10px 0;
 }
 
 nav ul li {
@@ -55,19 +74,23 @@ nav ul li a:hover {
 
 /* Section styling */
 .section {
-    margin: 60px 0;
+    margin: 60px auto;
     opacity: 0;
     transition: opacity 1s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Center the sections with a maximum width */
 }
 
+/* Show section */
 .fade-in {
     opacity: 1;
 }
 
+/* Intro section styling */
 .intro h2, .intro p {
     text-align: center;
 }
@@ -92,7 +115,7 @@ nav ul li a:hover {
 /* Form styling */
 form {
     max-width: 600px;
-    margin: auto;
+    margin: 0 auto; /* Center form horizontally */
 }
 
 form input, form textarea, form button {
@@ -132,13 +155,14 @@ form input:focus, form textarea:focus, form button:hover {
 
 /* Footer styling */
 footer {
-    width: 100%;
     padding: 20px;
     background-color: #333;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-/* Loading screen */
 /* Loading screen */
 #loading-screen {
     position: fixed;
