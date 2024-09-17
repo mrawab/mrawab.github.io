@@ -107,8 +107,7 @@ html {
 }
 
 .section.hidden {
-    opacity: 0;
-    visibility: hidden;
+    display: none;
 }
 
 /* Error message styling */
