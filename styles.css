@@ -7,7 +7,20 @@
 
 body {
     font-family: Arial, sans-serif;
+    height: 100vh; /* Ensure full height to vertically center content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: background-color 0.3s, color 0.3s;
+}
+
+.container-center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .dark-mode {
@@ -21,37 +34,32 @@ body {
 }
 
 header {
-    text-align: center;
-    padding: 2rem;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-in-out;
 }
 
 nav {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    flex-direction: column;
+    align-items: center;
 }
 
-nav a {
+.nav-link {
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 2rem;
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
     border: 2px solid;
     border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     cursor: pointer;
 }
 
-nav a:hover {
+.nav-link:hover {
     background-color: #007BFF;
     color: white;
-}
-
-.container {
-    text-align: center;
-    padding: 2rem;
-    margin: 0 auto;
-    max-width: 800px;
+    transform: scale(1.1);
 }
 
 .footer {
@@ -74,20 +82,14 @@ nav a:hover {
     cursor: pointer;
 }
 
-.hidden {
-    display: none;
-}
-
-.fade {
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
-}
-
+/* Fade-in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translateY(-20px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
