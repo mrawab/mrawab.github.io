@@ -2,9 +2,16 @@
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+        const target = document.querySelector(this.getAttribute('href'));
+        
+        // Hide all sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.classList.add('hidden');
         });
+
+        // Show the target section
+        target.classList.remove('hidden');
+        target.scrollIntoView({ behavior: 'smooth' });
     });
 });
 
@@ -13,6 +20,7 @@ const sections = document.querySelectorAll('.section');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            entry.target.classList.remove('hidden'); // Ensure section is visible
             entry.target.classList.add('fade-in');
             observer.unobserve(entry.target); // Stop observing once it's visible
         }
@@ -20,7 +28,6 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 
 sections.forEach(section => {
-    section.classList.add('hidden'); // Initially hide sections
     observer.observe(section);
 });
 
