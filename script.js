@@ -44,10 +44,32 @@ document.getElementById('scroll-to-bottom').addEventListener('click', function()
 });
 
 // Loading screen
-window.addEventListener('load', () => {
-    const loadingScreen = document.getElementById('loading-screen');
-    loadingScreen.style.display = 'none';
-});
+// Set a minimum display time for the loading screen (e.g., 2 seconds)
+const minLoadingTime = 2000; // 2 seconds
+
+// Start tracking the time when the page starts loading
+const startTime = Date.now();
+
+// Function to hide the loading screen
+function hideLoadingScreen() {
+    const elapsedTime = Date.now() - startTime;
+    const remainingTime = minLoadingTime - elapsedTime;
+    
+    // Ensure the loading screen stays for at least `minLoadingTime`
+    setTimeout(() => {
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.style.transition = 'opacity 0.5s ease';  // Smooth fade out
+        loadingScreen.style.opacity = '0';  // Start fade out
+
+        // Remove the loading screen from DOM after fade out
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 500);  // Match the duration of the fade-out effect (0.5s)
+    }, Math.max(remainingTime, 0));  // Wait the remaining time if necessary
+}
+
+// Event listener for when the page fully loads
+window.addEventListener('load', hideLoadingScreen);
 
 // Form validation
 const form = document.getElementById('contactForm');
