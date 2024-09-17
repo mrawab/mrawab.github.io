@@ -5,8 +5,14 @@ body {
     background-color: #1e1e1e;
     margin: 0;
     padding: 0;
+    height: 100%;
     line-height: 1.6;
 }
+
+html {
+    height: 100%;
+    margin: 0; 
+} 
 
 header, .nav-header {
     background: #333;
@@ -106,14 +112,19 @@ button:hover {
     display: none;
 }
 
+/* Main content area */
+.main-content {
+    min-height: 100vh;
+    padding-bottom: 3rem; /* Space for the footer */
+}
+
 /* Footer Styling */
 footer {
     background: #333;
     color: white;
     text-align: center;
     padding: 1rem 0;
-    margin-top: 2rem;
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100%;
 }
