@@ -1,51 +1,70 @@
 // Smooth scrolling for navigation buttons
 document.querySelectorAll('.nav-button').forEach(button => {
-    button.addEventListener('click', function(e) {
+    button.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             targetElement.scrollIntoView({
-                behavior: 'smooth'
+                behavior: 'smooth',
+                block: 'start'
             });
         }
     });
 });
 
-// Fade-in animation on scroll
+// Section-by-section loading with fade-in and fade-out animations
 const sections = document.querySelectorAll('.section');
+let currentSectionIndex = -1;
+
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
+        const index = Array.from(sections).indexOf(entry.target);
+
         if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
+            if (index !== currentSectionIndex) {
+                // Fade out the previous section
+                if (currentSectionIndex >= 0) {
+                    sections[currentSectionIndex].classList.remove('fade-in');
+                    sections[currentSectionIndex].classList.add('fade-out');
+                }
+
+                // Fade in the current section
+                entry.target.classList.remove('fade-out');
+                entry.target.classList.add('fade-in');
+                currentSectionIndex = index;
+            }
         } else {
+            // Add fade-out class when not in view
             entry.target.classList.remove('fade-in');
+            entry.target.classList.add('fade-out');
         }
     });
 }, { threshold: 0.5 });
 
+// Observe each section
 sections.forEach(section => {
     observer.observe(section);
 });
 
 // Scroll to top and bottom buttons
-document.getElementById('scroll-to-top').addEventListener('click', function() {
+document.getElementById('scroll-to-top').addEventListener('click', function () {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
     });
 });
 
-document.getElementById('scroll-to-bottom').addEventListener('click', function() {
+document.getElementById('scroll-to-bottom').addEventListener('click', function () {
     window.scrollTo({
         top: document.body.scrollHeight,
         behavior: 'smooth'
     });
 });
 
-// Loading screen
-// Set a minimum display time for the loading screen (e.g., 2 seconds)
-const minLoadingTime = 2000; // 2 seconds
+// Loading screen with dynamic responsiveness based on the speed of the internet
+// Set a minimum display time for the loading screen (e.g., 1.5 seconds)
+const minLoadingTime = 1500; // 1.5 seconds
 
 // Start tracking the time when the page starts loading
 const startTime = Date.now();
@@ -54,7 +73,7 @@ const startTime = Date.now();
 function hideLoadingScreen() {
     const elapsedTime = Date.now() - startTime;
     const remainingTime = minLoadingTime - elapsedTime;
-    
+
     // Ensure the loading screen stays for at least `minLoadingTime`
     setTimeout(() => {
         const loadingScreen = document.getElementById('loading-screen');
@@ -75,7 +94,7 @@ window.addEventListener('load', hideLoadingScreen);
 const form = document.getElementById('contactForm');
 const errorMessage = document.getElementById('error-message');
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', function (e) {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
