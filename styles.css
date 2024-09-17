@@ -87,7 +87,40 @@ button:hover {
     background-color: #555;
 }
 
-/* Fade-in Animation */
+/* General arrow button styles */
+.scroll-arrow {
+    position: fixed;
+    background-color: #333;
+    color: white;
+    padding: 0.8rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-arrow:hover {
+    background-color: #555;
+}
+
+/* Top arrow at the top of the page */
+#scroll-to-bottom {
+    top: 20px;
+    right: 20px;
+}
+
+/* Bottom arrow at the end of each section */
+.scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Fade-in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -100,13 +133,14 @@ button:hover {
 }
 
 .fade-in {
-    opacity: 0;
-    animation: fadeIn 1s forwards;
+    opacity: 1 !important;
+    animation: fadeIn 0.6s forwards;
 }
 
-.section.hidden {
+/* Initial hidden state */
+.section.hidden{
     opacity: 0;
-    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 /* Error Message Styling */
