@@ -139,6 +139,7 @@ footer {
 }
 
 /* Loading screen */
+/* Loading screen */
 #loading-screen {
     position: fixed;
     top: 0;
@@ -150,6 +151,7 @@ footer {
     justify-content: center;
     align-items: center;
     z-index: 10000;
+    opacity: 1;  /* Initial opacity for fade out effect */
 }
 
 .loader {
