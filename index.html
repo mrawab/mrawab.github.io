@@ -7,65 +7,77 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="main-header">
-        <h1>Awab Azhari</h1>
+    <header>
+        <nav>
+            <h1>Awab Azhari</h1>
+            <ul>
+                <li><a href="#about" class="nav-button">About Me</a></li>
+                <li><a href="#resume" class="nav-button">Resume</a></li>
+                <li><a href="#projects" class="nav-button">Projects</a></li>
+                <li><a href="#contact" class="nav-button">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav class="nav-header">
+    <!-- Arrow at the top to scroll to bottom -->
+    <button id="scroll-to-bottom" class="scroll-arrow" href="#footer">&#8595;</button>
+
+    <section id="hero" class="section">
+        <div class="intro">
+            <h2>Hi, I'm Awab Azhari</h2>
+            <p>Exploring the world of electronics engineering and Python programming.</p>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>I am a passionate electronics engineer delving into Python programming. This website showcases my work, including beginner-level Python projects.</p>
+        <!-- Scroll arrow for about section -->
+        <button class="scroll-arrow scroll-to-top" href="#hero">&#8593;</button>
+    </section>
+
+    <section id="resume" class="section">
+        <h2>My Resume</h2>
         <ul>
-            <li><a href="#about" class="nav-button">About</a></li>
-            <li><a href="#resume" class="nav-button">Resume</a></li>
-            <li><a href="#projects" class="nav-button">Projects</a></li>
-            <li><a href="#contact" class="nav-button">Contact</a></li>
+            <li><strong>Education:</strong> Bachelor of Electronics Engineering</li>
+            <li><strong>Skills:</strong> Python (Beginner), Circuit Design, etc.</li>
         </ul>
-    </nav>
+        <!-- Scroll arrow for resume section -->
+        <button class="scroll-arrow scroll-to-top" href="#hero">&#8593;</button>
+    </section>
 
-    <main class="main-content">
-        <section id="hero">
-            <div class="intro">
-                <h2>Hi, I'm Awab Azhari</h2>
-                <p>Exploring the world of electronics engineering and Python programming.</p>
-            </div>
-        </section>
+    <section id="projects" class="section">
+        <h2>My Projects</h2>
+        <div class="project">
+            <h3>Project 1: Telegram bot</h3>
+            <p>A Python-based Telegram bot for study.</p>
+            <a href="https://t.me/MRAWABBOT">My Telegram Bot</a>
+        </div>
+        <!-- Scroll arrow for projects section -->
+        <button class="scroll-arrow scroll-to-top" href="#hero">&#8593;</button>
+    </section>
 
-        <section id="about" class="section hidden">
-            <h2>About Me</h2>
-            <p>I am a passionate electronics engineer delving into Python programming. This website showcases my work, including beginner-level Python projects.</p>
-        </section>
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <form id="contactForm" action="mailto:your-email@example.com" method="POST" enctype="text/plain">
+            <input type="text" name="name" id="name" placeholder="Your Name" required>
+            <input type="email" name="email" id="email" placeholder="Your Email" required>
+            <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+            <p id="error-message" style="color: red; display: none;">Please fill out all fields correctly.</p>
+        </form>
+        <!-- Scroll arrow for contact section -->
+        <button class="scroll-arrow scroll-to-top" href="#hero">&#8593;</button>
+    </section>
 
-        <section id="resume" class="section hidden">
-            <h2>My Resume</h2>
-            <ul>
-                <li><strong>Education:</strong> Bachelor of Electronics Engineering</li>
-                <li><strong>Skills:</strong> Python (Beginner), Circuit Design, etc.</li>
-            </ul>
-        </section>
-
-        <section id="projects" class="section hidden">
-            <h2>My Projects</h2>
-            <div class="project">
-                <h3>Project 1: Telegram bot</h3>
-                <p>A Python-based Telegram bot for study.</p>
-                <a href="https://t.me/MRAWABBOT" class="telegram-btn">My Telegram Bot</a>
-            </div>
-        </section>
-
-        <section id="contact" class="section hidden">
-            <h2>Contact Me</h2>
-            <form id="contactForm" action="mailto:awab.azharii@gmail.com" method="POST" enctype="text/plain">
-                <input type="text" name="name" id="name" placeholder="Your Name" required>
-                <input type="email" name="email" id="email" placeholder="Your Email" required>
-                <textarea name="message" id="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send</button>
-                <p id="error-message">Please fill out all fields correctly.</p>
-            </form>
-        </section>
-    </main>
-
-    <footer>
+    <!-- Footer at the end -->
+    <footer id="footer">
         <p>&copy; 2024 Awab Azhari</p>
+        <!-- Arrow at the footer to scroll to top -->
+        <button id="scroll-to-top" class="scroll-arrow" href="#hero">&#8593;</button>
     </footer>
 
+    <!-- Link to external JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
