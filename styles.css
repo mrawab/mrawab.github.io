@@ -19,6 +19,7 @@ header h1 {
     margin: 0;
 }
 
+/* Navigation Menu */
 .nav-header ul {
     list-style: none;
     padding: 0;
@@ -26,7 +27,7 @@ header h1 {
 }
 
 .nav-header ul li {
-    display: inline-block;
+    display: inline-block; /* For horizontal layout on desktop */
     margin: 0 0.5rem;
 }
 
@@ -43,6 +44,24 @@ header h1 {
 .nav-button:hover {
     background-color: #555;
     transform: scale(1.05);
+}
+
+/* Responsive Design for Navigation */
+@media (max-width: 768px) {
+    .nav-header ul {
+        text-align: center;
+        padding: 0;
+    }
+
+    .nav-header ul li {
+        display: block; /* For vertical layout on mobile */
+        margin: 0.5rem 0;
+    }
+
+    .nav-button {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.2rem;
+    }
 }
 
 /* Section Styles */
@@ -104,28 +123,14 @@ button:hover {
     display: none;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-header ul {
-        text-align: center;
-    }
-
-    .nav-header ul li {
-        display: block;
-        margin: 0.5rem 0;
-    }
-
-    .nav-button {
-        font-size: 1.2rem;
-        padding: 0.8rem 1.2rem;
-    }
-
-    input, textarea {
-        width: 95%;
-    }
-
-    button {
-        width: 95%;
-        font-size: 1.2rem;
-    }
-} 
+/* Footer Styling */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
