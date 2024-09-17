@@ -1,8 +1,7 @@
-// Smooth scrolling for navigation buttons and arrows
-document.querySelectorAll('.nav-button, .scroll-arrow').forEach(button => {
+// Smooth scrolling for navigation buttons
+document.querySelectorAll('.nav-button').forEach(button => {
     button.addEventListener('click', function(e) {
         e.preventDefault();
-        
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
@@ -13,21 +12,44 @@ document.querySelectorAll('.nav-button, .scroll-arrow').forEach(button => {
     });
 });
 
-// Intersection Observer for smooth fade-in/fade-out on scroll
+// Fade-in and Fade-out animation when scrolling between sections
 const sections = document.querySelectorAll('.section');
-const observer = new IntersectionObserver(entries => {
+const options = {
+    threshold: [0, 0.5, 1],
+};
+
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');   // Fade-in the current section
+        const section = entry.target;
+
+        // Apply fade-in when the section is entering view
+        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+            section.classList.add('visible');
+            section.classList.remove('fade-out');
         } else {
-            entry.target.classList.remove('fade-in'); // Fade-out when leaving the section
+            // Apply fade-out when leaving
+            section.classList.remove('visible');
+            section.classList.add('fade-out');
         }
     });
-}, { threshold: 0.5 });
+}, options);
 
 sections.forEach(section => {
     observer.observe(section);
 });
+
+// Scroll arrows functionality
+document.getElementById('scroll-to-bottom').addEventListener('click', function() {
+    document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('scroll-to-top').addEventListener('click', function() {
+    document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });
+});
+
+
+
+
 
 // Form validation
 const form = document.getElementById('contactForm');
