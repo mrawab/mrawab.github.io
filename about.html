@@ -3,26 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>Awab Azhari | Personal Website</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
-<body class="light-mode">
+<body>
+    <!-- Dark/Light Mode Toggle Button -->
+    <button id="modeToggle" class="mode-toggle">Toggle Dark Mode</button>
 
+    <!-- Header and Navigation -->
     <header>
-        Awab Azhari
+        <h1>Awab Azhari</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="toggle-btn" onclick="toggleMode()">🌙</div>
-
-    <div class="container">
+    <!-- About Section -->
+    <section id="about">
         <h2>About Me</h2>
-        <p>Welcome to my personal website! I’m Awab Azhari, and this is a space where you can learn more about me, my projects, and how to get in touch.</p>
-    </div>
+        <p>Hello! I’m Awab Azhari, an electronics engineer and beginner Python programmer. I love solving problems and creating innovative projects in the world of tech.</p>
+    </section>
 
-    <footer class="footer">
-        &copy; 2024 Awab Azhari
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Here are some of my beginner Python projects:</p>
+        <ul>
+            <li>Simple Calculator in Python</li>
+            <li>Temperature Converter</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you want to reach out, feel free to contact me through my email: <a href="mailto:awab@example.com">awab@example.com</a></p>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <h2>Resume</h2>
+        <p>Download my resume <a href="resume.pdf" download>here</a>.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Awab Azhari. All rights reserved.</p>
     </footer>
-
-    <script src="scripts.js"></script>
 </body>
 </html>
