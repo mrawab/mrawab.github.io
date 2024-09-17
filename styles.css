@@ -1,44 +1,39 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Dark Mode */
+/* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
     color: #ddd;
     background-color: #1e1e1e;
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
 }
 
-header, footer {
+header, .nav-header {
     background: #333;
     color: white;
-    padding: 1rem 0;
+    padding: 1rem;
     text-align: center;
 }
 
-.nav-header {
-    background: #222;
-    padding: 1rem 0;
+header h1 {
+    margin: 0;
 }
 
 .nav-header ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-header ul li {
-    margin: 0 1rem;
+    display: inline-block;
+    margin: 0 0.5rem;
 }
 
 .nav-button {
     color: #ddd;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     background-color: #444;
@@ -50,46 +45,16 @@ header, footer {
     transform: scale(1.05);
 }
 
-#hero {
-    background-color: #333;
+/* Section Styles */
+section {
     padding: 2rem;
     text-align: center;
-}
-
-#hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-#hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.section {
-    padding: 2rem;
-    text-align: center;
-}
-
-.project-link {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #444;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-    font-size: 1rem;
-}
-
-.project-link:hover {
-    background-color: #555;
 }
 
 input, textarea {
-    width: 80%;
+    width: 90%;
     padding: 0.8rem;
-    margin: 1rem 0;
+    margin: 1rem auto;
     border-radius: 5px;
     border: 1px solid #444;
     background-color: #222;
@@ -103,18 +68,15 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
 }
 
 button:hover {
     background-color: #555;
 }
 
-footer {
-    padding: 1rem 0;
-    margin-top: 2rem;
-}
-
-/* Fade-in animation */
+/* Fade-in Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -135,9 +97,35 @@ footer {
     display: none;
 }
 
-/* Error message styling */
+/* Error Message Styling */
 #error-message {
     color: red;
     margin-top: 10px;
     display: none;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-header ul {
+        text-align: center;
+    }
+
+    .nav-header ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .nav-button {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.2rem;
+    }
+
+    input, textarea {
+        width: 95%;
+    }
+
+    button {
+        width: 95%;
+        font-size: 1.2rem;
+    }
+} 
