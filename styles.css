@@ -1,126 +1,116 @@
-/* Global Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    color: #ddd;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #1e1e1e;
+/* General styles */
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
     line-height: 1.6;
 }
 
-html {
-    height: 100%;
-    margin: 0; 
-} 
-
-header, .nav-header {
+header {
     background: #333;
     color: white;
-    padding: 1rem;
+    padding: 1rem 0;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-}
-
-/* Navigation Menu */
-.nav-header ul {
+nav ul {
     list-style: none;
+    display: flex;
+    justify-content: center;
     padding: 0;
-    margin: 0;
-    display: flex; /* Ensure horizontal layout */
-    justify-content: center; /* Center the navigation items */
 }
 
-.nav-header ul li {
-    margin: 0 0.5rem;
+nav ul li {
+    margin: 0 1rem;
 }
 
-.nav-button {
-    color: #ddd;
+nav ul li a {
+    color: white;
     text-decoration: none;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    background-color: #444;
-    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1.1rem;
 }
 
-.nav-button:hover {
-    background-color: #555;
-    transform: scale(1.05);
-}
-
-/* Section Styles */
-section {
+#hero {
+    background-color: #f4f4f4;
     padding: 2rem;
     text-align: center;
 }
 
-input, textarea {
-    width: 90%;
-    padding: 0.8rem;
-    margin: 1rem auto;
-    border-radius: 5px;
-    border: 1px solid #444;
-    background-color: #222;
-    color: #ddd;
+#hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
-button {
-    padding: 0.8rem 1.2rem;
-    background-color: #444;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 1rem;
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
-button:hover {
-    background-color: #555;
+.section {
+    padding: 2rem;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
 }
 
-/* General arrow button styles */
+.section.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.intro.fade-in {
+    animation: fadeIn 1.5s forwards;
+}
+
+.project-link {
+    color: #007bff;
+    text-decoration: none;
+    border-bottom: 1px solid #007bff;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.project-link:hover {
+    color: #0056b3;
+    border-bottom: 1px solid #0056b3;
+}
+
+/* Scroll arrows styles */
 .scroll-arrow {
-    position: fixed;
-    background-color: #333;
-    color: white;
-    padding: 0.8rem;
-    border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    background: transparent;
     border: none;
+    color: #333;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    transition: background-color 0.3s ease;
+    display: block;
+    margin: 1rem auto;
+    transition: opacity 0.3s ease;
 }
 
 .scroll-arrow:hover {
-    background-color: #555;
+    opacity: 0.7;
 }
 
-/* Top arrow at the top of the page */
-#scroll-to-bottom {
-    top: 20px;
-    right: 20px;
+.arrow-wrapper {
+    text-align: center;
+    margin: 2rem 0;
 }
 
-/* Bottom arrow at the end of each section */
-.scroll-to-top {
-    bottom: 20px;
-    right: 20px;
+/* Modern footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
 }
 
-/* Fade-in animation */
+/* Fade-in and fade-out animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -132,67 +122,19 @@ button:hover {
     }
 }
 
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 .fade-in {
-    opacity: 1 !important;
-    animation: fadeIn 0.6s forwards;
+    animation: fadeIn 1.5s forwards;
 }
 
-/* Initial hidden state */
-.section.hidden{
-    opacity: 0;
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* Error Message Styling */
-#error-message {
-    color: red;
-    margin-top: 10px;
-    display: none;
-}
-
-/* Telegram Button Styling */
-#projects .telegram-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #0088cc; /* Telegram color */
-    color: white;
-    padding: 0.8rem 1.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    margin: 2rem auto;
-}
-
-#projects .telegram-btn:hover {
-    background-color: #005f99; /* Darker telegram color on hover */
-}
-
-#projects {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-main {
-    flex-grow: 1;
-} 
-
-/* Main content area 
-.main-content {
-    min-height: 100vh;
-    padding-bottom: 3rem; /* Space for the footer 
-}/*
-
-/* Footer Styling */
-footer {
-    background-color: #333;
-    color: white;
-    margin-top: auto;
-    text-align: center;
-    padding: 1rem 0;
-    position: relative;
-    width: 100%;
+.fade-out {
+    animation: fadeOut 1.5s forwards;
 }
