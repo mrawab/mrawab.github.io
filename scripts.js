@@ -1,9 +1,19 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const preloader = document.getElementById('preloader');
     const container = document.querySelector('.container-center');
-    
-    preloader.classList.add('hidden');  // Hide preloader
-    container.classList.remove('hidden');  // Show content
+
+    // Function to hide preloader and show content
+    function hidePreloader() {
+        preloader.classList.add('hidden');
+        container.classList.remove('hidden');
+    }
+
+    // Check if the page has fully loaded
+    if (document.readyState === 'complete') {
+        hidePreloader();
+    } else {
+        window.addEventListener('load', hidePreloader);
+    }
 });
 
 function toggleMode() {
