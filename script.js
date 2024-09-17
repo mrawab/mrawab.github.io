@@ -12,16 +12,13 @@ document.querySelectorAll('.nav-button').forEach(button => {
     });
 });
 
-// Fade-in and fade-out animation on scroll
+// Fade-in animation on scroll
 const sections = document.querySelectorAll('.section');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.remove('hidden'); // Ensure section becomes visible
-            entry.target.classList.add('fade-in'); // Apply fade-in class when intersecting
-            entry.target.classList.remove('fade-out');
+            entry.target.classList.add('fade-in');
         } else {
-            entry.target.classList.add('fade-out'); // Apply fade-out when leaving view
             entry.target.classList.remove('fade-in');
         }
     });
@@ -31,23 +28,18 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// Scroll to the next section with arrows
-document.querySelectorAll('.scroll-to-next').forEach(button => {
-    button.addEventListener('click', function() {
-        const nextSection = this.closest('.section').nextElementSibling;
-        if (nextSection && nextSection.classList.contains('section')) {
-            nextSection.scrollIntoView({ behavior: 'smooth' });
-        }
+// Scroll to top and bottom buttons
+document.getElementById('scroll-to-top').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
 });
 
-// Scroll to the previous section with arrows
-document.querySelectorAll('.scroll-to-prev').forEach(button => {
-    button.addEventListener('click', function() {
-        const prevSection = this.closest('.section').previousElementSibling;
-        if (prevSection && prevSection.classList.contains('section')) {
-            prevSection.scrollIntoView({ behavior: 'smooth' });
-        }
+document.getElementById('scroll-to-bottom').addEventListener('click', function() {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
     });
 });
 
