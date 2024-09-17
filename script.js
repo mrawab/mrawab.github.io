@@ -43,6 +43,12 @@ document.getElementById('scroll-to-bottom').addEventListener('click', function()
     });
 });
 
+// Loading screen
+window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    loadingScreen.style.display = 'none';
+});
+
 // Form validation
 const form = document.getElementById('contactForm');
 const errorMessage = document.getElementById('error-message');
