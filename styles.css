@@ -46,6 +46,29 @@ body {
     display: none;
 }
 
+.project-card {
+    background-color: #f1f1f1;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #007BFF, #00FF7F);
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.project-btn:hover {
+    background-color: #00A7FF;
+}
+
 /* Container Styling */
 .container-center {
     text-align: center;
