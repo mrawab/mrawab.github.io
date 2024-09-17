@@ -12,44 +12,42 @@ document.querySelectorAll('.nav-button').forEach(button => {
     });
 });
 
-// Fade-in and Fade-out animation when scrolling between sections
+// Fade-in and fade-out animation on scroll
 const sections = document.querySelectorAll('.section');
-const options = {
-    threshold: [0, 0.5, 1],
-};
-
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        const section = entry.target;
-
-        // Apply fade-in when the section is entering view
-        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-            section.classList.add('visible');
-            section.classList.remove('fade-out');
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            entry.target.classList.remove('fade-out');
         } else {
-            // Apply fade-out when leaving
-            section.classList.remove('visible');
-            section.classList.add('fade-out');
+            entry.target.classList.add('fade-out');
+            entry.target.classList.remove('fade-in');
         }
     });
-}, options);
+}, { threshold: 0.5 });
 
 sections.forEach(section => {
     observer.observe(section);
 });
 
-// Scroll arrows functionality
-document.getElementById('scroll-to-bottom').addEventListener('click', function() {
-    document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
+// Scroll to the next and previous section with arrows
+document.querySelectorAll('.scroll-to-next').forEach(button => {
+    button.addEventListener('click', function() {
+        const nextSection = this.closest('.section').nextElementSibling;
+        if (nextSection && nextSection.classList.contains('section')) {
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 });
 
-document.getElementById('scroll-to-top').addEventListener('click', function() {
-    document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });
+document.querySelectorAll('.scroll-to-prev').forEach(button => {
+    button.addEventListener('click', function() {
+        const prevSection = this.closest('.section').previousElementSibling;
+        if (prevSection && prevSection.classList.contains('section')) {
+            prevSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 });
-
-
-
-
 
 // Form validation
 const form = document.getElementById('contactForm');
