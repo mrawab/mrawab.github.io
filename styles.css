@@ -3,33 +3,23 @@
     --primary-color: #2c3e50;
     --secondary-color: #ecf0f1;
     --accent-color: #3498db;
-    --light-background: #ffffff;
-    --dark-background: #2c3e50;
-    --dark-text: #ecf0f1;
-    --light-text: #333333;
+    --font-family: 'Arial', sans-serif;
     --transition-time: 0.3s;
     --button-radius: 25px;
 }
 
-/* Dark mode and light mode */
-body.light-mode {
-    background-color: var(--light-background);
-    color: var(--light-text);
-}
-
-body.dark-mode {
-    background-color: var(--dark-background);
-    color: var(--dark-text);
-}
-
+/* Body and Global Styles */
 body {
+    font-family: var(--font-family);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Arial', sans-serif;
-    transition: background-color var(--transition-time), color var(--transition-time);
+    margin: 0;
 }
 
+/* Header */
 header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -37,17 +27,17 @@ header {
     text-align: center;
 }
 
-h1 {
+header h1 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
+    animation: fadeIn 1s ease-out;
 }
 
+/* Navigation Styling */
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
     padding: 0;
-    margin-bottom: 10px;
 }
 
 nav ul li {
@@ -67,8 +57,10 @@ nav ul li a:hover {
     background-color: #2980b9;
 }
 
+/* Main Content */
 main {
     flex-grow: 1;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,41 +68,77 @@ main {
     text-align: center;
 }
 
+/* Footer */
 footer {
-    text-align: center;
-    color: #777;
     background-color: var(--primary-color);
+    color: #777;
     padding: 10px;
+    text-align: center;
     position: sticky;
     bottom: 0;
     width: 100%;
 }
 
-.toggle-btn {
+/* Button Styling */
+.btn, .telegram-btn {
+    display: inline-block;
     padding: 10px 20px;
     background-color: var(--accent-color);
-    border: none;
     color: var(--secondary-color);
+    text-decoration: none;
     border-radius: var(--button-radius);
-    cursor: pointer;
     transition: background-color var(--transition-time);
+    margin-top: 15px;
 }
 
-.toggle-btn:hover {
+.btn:hover, .telegram-btn:hover {
     background-color: #2980b9;
 }
 
-/* Resume page - skills without dots */
-ul {
-    list-style: none;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.skills-list li {
-    font-size: 1.2rem;
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fade-in {
     animation: fadeIn 1.5s ease-out;
 }
 
-form {
+.slide-in {
+    animation: slideIn 1.5s ease-out;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    form {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -142,13 +170,9 @@ form button {
 
 form button:hover {
     background-color: var(--accent-color);
-}   
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
     }
-    to {
-        opacity: 1;
+
+    main {
+        padding: 10px;
     }
 }
