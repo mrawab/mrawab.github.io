@@ -30,6 +30,7 @@ header {
 header h1 {
     font-size: 2.5rem;
     animation: fadeIn 1s ease-out;
+    margin: 0;
 }
 
 /* Navigation Styling */
@@ -40,6 +41,7 @@ nav ul {
     padding: 0;
     margin: 20px 0; /* Adds spacing */
     flex-wrap: wrap; /* Allows wrapping for smaller devices */
+    gap: 10px; /* Adds space between navigation items */
 }
 
 nav ul li {
@@ -53,6 +55,8 @@ nav ul li a {
     border-radius: var(--button-radius);
     background-color: var(--accent-color);
     transition: background-color var(--transition-time);
+    display: block;
+    text-align: center;
 }
 
 nav ul li a:hover {
@@ -68,6 +72,28 @@ main {
     align-items: center;
     flex-direction: column;
     text-align: center;
+}
+
+/* Skills Section without Dots */
+.skills-list {
+    list-style-type: none; /* Removes the dots */
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills-list li {
+    margin: 10px;
+    background-color: var(--accent-color);
+    padding: 10px 15px;
+    border-radius: var(--button-radius);
+    color: var(--secondary-color);
+    transition: background-color var(--transition-time);
+}
+
+.skills-list li:hover {
+    background-color: #2980b9;
 }
 
 /* Footer */
@@ -173,10 +199,11 @@ form button:hover {
 
     nav ul {
         flex-direction: column;
+        gap: 10px; /* Adds space between vertical items */
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 5px 0;
     }
 
     form {
@@ -186,5 +213,15 @@ form button:hover {
 
     main {
         padding: 10px;
+    }
+
+    /* Skills Section Adjustments */
+    .skills-list {
+        flex-direction: column;
+    }
+
+    .skills-list li {
+        width: 100%;
+        text-align: center;
     }
 }
