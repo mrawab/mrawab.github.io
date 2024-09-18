@@ -17,6 +17,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    padding: 0;
 }
 
 /* Header */
@@ -24,14 +25,13 @@ header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     padding: 20px;
-    justify-content: center;
     text-align: center;
 }
 
 header h1 {
     font-size: 2.5rem;
-    animation: fadeIn 1s ease-out;
     margin: 0;
+    animation: fadeIn 1s ease-out;
 }
 
 /* Navigation Styling */
@@ -40,8 +40,8 @@ nav ul {
     display: flex;
     justify-content: center;
     padding: 0;
-    margin: 20px 0; /* Adds spacing */
-    flex-wrap: wrap; /* Allows wrapping for smaller devices */
+    margin: 20px 0;
+    flex-wrap: wrap; /* Wraps the navigation for smaller screens */
     gap: 10px; /* Adds space between navigation items */
 }
 
@@ -68,33 +68,22 @@ nav ul li a:hover {
 main {
     flex-grow: 1;
     padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+    text-align: left;
 }
 
-/* Skills Section without Dots */
+/* Skills List Styling */
 .skills-list {
-    list-style-type: none; /* Removes the dots */
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    list-style-type: decimal; /* Makes it a numbered list */
+    padding-left: 20px;
+    margin-top: 10px;
 }
 
 .skills-list li {
-    margin: 10px;
-    background-color: var(--accent-color);
-    padding: 10px 15px;
-    border-radius: var(--button-radius);
-    color: var(--secondary-color);
-    transition: background-color var(--transition-time);
-}
-
-.skills-list li:hover {
-    background-color: #2980b9;
+    margin-bottom: 10px;
+    background: none; /* Removes button-like appearance */
+    padding: 0; /* Removes padding to make it look more like a list */
+    color: var(--primary-color);
+    border: none;
 }
 
 /* Footer */
@@ -103,8 +92,8 @@ footer {
     color: #777;
     padding: 10px;
     text-align: center;
-    margin-top: auto; /* Forces footer to stick to bottom */
     width: 100%;
+    margin-top: auto;
 }
 
 /* Button Styling */
@@ -200,11 +189,15 @@ form button:hover {
 
     nav ul {
         flex-direction: column;
-        gap: 10px; /* Adds space between vertical items */
+        gap: 10px;
     }
 
     nav ul li {
         margin: 5px 0;
+    }
+
+    main {
+        padding: 10px;
     }
 
     form {
@@ -212,17 +205,12 @@ form button:hover {
         padding: 15px;
     }
 
-    main {
-        padding: 10px;
-    }
-
-    /* Skills Section Adjustments */
     .skills-list {
-        flex-direction: column;
+        padding-left: 15px;
+        font-size: 1rem;
     }
 
     .skills-list li {
-        width: 100%;
-        position: relative;
+        margin-bottom: 8px;
     }
 }
