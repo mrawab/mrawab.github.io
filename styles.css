@@ -24,6 +24,7 @@ header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     padding: 20px;
+    justify-content: center;
     text-align: center;
 }
 
@@ -207,7 +208,7 @@ form button:hover {
     }
 
     form {
-        width: 30%;
+        width: 90%;
         padding: 15px;
     }
 
@@ -222,6 +223,6 @@ form button:hover {
 
     .skills-list li {
         width: 100%;
-        text-align: center;
+        position: relative;
     }
 }
