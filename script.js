@@ -1,3 +1,11 @@
+const toggleButton = document.getElementById('theme-toggle');
+const bodyElement = document.body;
+
+toggleButton.addEventListener('click', () => {
+    bodyElement.classList.toggle('dark-mode');
+    bodyElement.classList.toggle('light-mode');
+});
+
 document.getElementById("contactForm").addEventListener("submit", function(event){
     event.preventDefault();
 
