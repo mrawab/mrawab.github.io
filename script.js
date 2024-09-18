@@ -1,11 +1,34 @@
-const toggleButton = document.getElementById('theme-toggle');
-const bodyElement = document.body;
+// JavaScript for fade-in and slide-in animations on scroll
+document.addEventListener("DOMContentLoaded", function() {
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const slideElements = document.querySelectorAll('.slide-in');
 
-toggleButton.addEventListener('click', () => {
-    bodyElement.classList.toggle('dark-mode');
-    bodyElement.classList.toggle('light-mode');
+    const fadeInOnScroll = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const fadeObserver = new IntersectionObserver(fadeInOnScroll, observerOptions);
+
+    fadeElements.forEach(element => {
+        fadeObserver.observe(element);
+    });
+
+    slideElements.forEach(element => {
+        fadeObserver.observe(element);
+    });
 });
 
+
+// form validation
 document.getElementById("contactForm").addEventListener("submit", function(event){
     event.preventDefault();
 
