@@ -15,6 +15,8 @@ body {
     color: var(--primary-color);
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -26,6 +28,7 @@ header {
     color: var(--secondary-color);
     padding: 20px;
     text-align: center;
+    width: 100%;
 }
 
 header h1 {
@@ -46,7 +49,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 10px 15px;
+    margin: 0;
 }
 
 nav ul li a {
@@ -68,7 +71,10 @@ nav ul li a:hover {
 main {
     flex-grow: 1;
     padding: 20px;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 /* Skills List Styling */
@@ -76,6 +82,7 @@ main {
     list-style-type: decimal; /* Makes it a numbered list */
     padding-left: 20px;
     margin-top: 10px;
+    text-align: left; /* Aligns the text left while keeping it centered in layout */
 }
 
 .skills-list li {
@@ -198,11 +205,6 @@ form button:hover {
 
     main {
         padding: 10px;
-    }
-
-    form {
-        width: 90%;
-        padding: 15px;
     }
 
     .skills-list {
