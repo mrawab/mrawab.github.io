@@ -1,36 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awab Azhari - Home</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1 class="fade-in">Welcome to My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="about.html" class="nav-link">About Me</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="resume.html" class="nav-link">Resume</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awab Azhari</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--Montserrat font-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/feather-icons@4.28.0/dist/feather.min.js"></script>
+  </head>
+  <body>   
+    <section>
+      <!-- MOBILE NAVIGATION -->
+      <div class="w3-container w3-padding-16 w3-border-bottom w3-hide-medium w3-hide-large">
+        <a href="#home" class="w3-bar-item w3-button w3-hover-none">AWAB AZHARI</a>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="toggleNavigation()">&#9776;</a>
+      </div>
+      <div id="mobile-nav" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-sticky">
+        <a href="#about" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green" onclick="toggleNavigation()">ABOUT</a>
+        <a href="#resume" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green" onclick="toggleNavigation()">RESUME</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green" onclick="toggleNavigation()">CONTACT</a>
+      </div>
 
-    <main>
-        <section class="fade-in">
-            <h2>Hi, I'm Awab Azhari</h2>
-            <p>A beginner Python programmer and an Electronics Engineering student.</p>
-            <p>Feel free to explore my projects and get in touch with me!</p>
-        </section>
-    </main>
+      <!-- SOCIAL SECTION -->
+      <section class="image-section w3-quarter w3-fixed w3-padding-small">
+        <!--IMAGE/AVATAR-->
+        <img src="main.jpg" style="border-width: 3px !important;"/>
+        <!--SOCIAL NETWORK BUTTONS-->
+        <div class="links w3-margin-top w3-padding-small">
+          <a class="icon-link w3-text-sand w3-hover-text-amber" href="#facebook" target="_blank">
+              <i data-feather="facebook"></i>
+          </a>
+          <a class="icon-link w3-text-sand w3-hover-text-amber" href="#twitter" target="_blank">
+             <i data-feather="twitter"></i>
+          </a>
+          <a class="icon-link w3-text-sand w3-hover-text-amber" href="#linkedin" target="_blank">
+             <i data-feather="linkedin"></i>
+          </a>
+          <a class="icon-link w3-text-sand w3-hover-text-amber" href="https://github.com/mrawab" target="_blank">
+             <i data-feather="github"></i>
+          </a>
+        </div>
+        <!--CV DOWNLOAD BUTTON-->
+        <div class="w3-container w3-padding-16">
+          <a href="resume.pdf" class="w3-amber w3-hover-amber w3-button w3-round-small w3-hover-deep-orange w3-padding-large" target="_blank" download="resume.pdf">
+            <i data-feather="arrow-down" style="vertical-align: -0.35em;"></i>
+            <span class="w3-margin-left download-text">DOWNLOAD CV</span>
+          </a>
+        </div>
+      </section>
 
-    <footer>
-        <p>&copy; 2024 Awab Azhari</p>
-    </footer>
+      <!--CV CONTENT SECTION-->
+      <section class="w3-threequarter w3-padding-large w3-right">
+        <!--DESKTOP NAVIGATION-->
+        <div class="w3-container w3-padding-large w3-border-bottom w3-hide-small">
+          <a href="#home" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green">AWAB AZHARI</a>
+          <a href="#contact" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">CONTACT</a>
+          <a href="#resume" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">RESUME</a>
+          <a href="#about" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">ABOUT</a>
+        </div>
+        <div class="content-container w3-margin-top-2">
+          <!--HOME SECTION-->
+          <div id="home" class="home w3-container w3-margin-top-4 w3-cursive">
+            <P style="font-style: italic; font-size:x-large;">"Exploring The World Of Electronics And Python Programing"</p>
+            <h1>Awab Azhari (20)</h2>
+            <h2>Python Developer</h3>
+            <p></p>
+          </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+          <!--ABOUT SECTION-->
+          <div id="about" class="w3-container w3-margin-top-20-percent w3-cursive w3-large">
+            <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">ABOUT</h2>
+            <p class="w3-margin-top-2"> 
+              My Name Is Awab Azhari I Study Electronics Engineering At Future University Sudan, I'm Also Learning Python At Beginner Level
+            </p>
+          </div>
+
+          <!--RESUME-->
+          <div id="resume" class="w3-container w3-margin-top-20-percent w3-cursive">
+            <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">RESUME</h2>
+        
+            <div class="w3-container w3-margin-top-2 w3-cursive">
+              <!--EMPLOYMENT HISTORY SECTION-->
+              <h3 class="w3-border-amber">No Resume Yet</h3>
+              <!--
+              <div class=""
+                <ul class="w3-ul" style="font-weight: 500;">
+                  <li>Ensured that published content meets brand guidelines and overall communication styles</li>
+                  <li>Built relations with the online community</li>
+                  <li>Implemented social media strategies to increase engagement and followers</li>
+                </ul>
+              </div>
+              <div class="">
+                <h4>Social Community Manager at the Company-Y</h4>
+                <p>January 2017 - June 2020 </p>
+                <ul class="w3-ul" style="font-weight: 500;">
+                  <li>Ensured that audience growth rate is in increase through social networs</li>
+                  <li>Managed social media campaigns for various social media platforms to align with marketing strategies</li>
+                  <li>Monitored and provided feedback on engagement/conversation via social media channels to leadership</li>
+              </div>
+              <div class="">
+                <h4>Social Community Manager at the Company-Z</h4>
+                <p>January 2014 - April 2016 </p>
+                <ul class="w3-ul" style="font-weight: 500;">
+                  <li>Organized and managed community events to boost brand awareness</li>
+                  <li>Monitored, tracked and reported on feedback and online reviews</li>
+                  <li>Provided engaging text, image and video content for all social media and professional accounts</li>
+                </ul> -->
+
+            </div>
+
+            <!---EDUCATION SECTION-->
+            <div class="w3-container w3-margin-top-2 w3-cursive">
+              <h3 class="w3-border-amber">MY EDUCATION</h3>
+                <h4>College Bachelor`s, College of Engineering, Sudan</h4>
+                <p>March 2021 - Expecting Graduations 2026</p>
+            </div>
+
+            <!--SKILLS SECTION-->
+            <div class="w3-container w3-margin-top-2 w3-cursive">
+              <h3 class="w3-border-amber">MY SKILLS</h3>
+              <h4>No Skills Yet!</h4>
+
+              <!--SOFT SKILLS--
+              <h4>Soft skills</h4>
+              <ul class="w3-ul" style="font-weight: 500;">
+                <li>I have excelent communication skill and confidence in front of an audience</li>
+                <li>I have a talent for investigating and researching different processes to offer different improvements and solution for the benefit of the organization </li>
+                <li>Provided engaging text, image and video content for all social media and professional accounts</li>
+              </ul>-->
+              <!--TECHNICAL SKILLS--
+              <h4>Technical skills</h4>
+                <ul class="w3-ul" style="font-weight: 500;">
+                  <li>I have a great experience with MS Office tools</li>
+                  <li>I am proficient in technical writing</li>
+                  <li>Provided engaging text, image and video content for all social media and professional accounts</li>
+                </ul>
+            </div>-->
+
+            <!--INTERESTS SECTION
+            <div class="w3-container w3-margin-top-2 w3-cursive">
+              <h3 class="w3-border-amber">MY HOBBIES AND INTERESTS</h3>
+                <ul class="w3-ul" style="font-weight: 500;">
+                  <li>I love mountain hiking and cycling in my free time</li>
+                  <li>I like to play board games with other people</li>
+                </ul>
+            </div>-->
+
+            <!--REFERENCE SECTION
+            <div class="w3-container w3-margin-top-2 w3-cursive">
+              <h3 class="w3-border-amber">MY REFERENCES</h3>
+              <h4>Awab Azhari, Student @future_university</h4>
+              <ul class="w3-ul" style="font-weight: 500;">
+                <li>+249 966063554</li>
+                <li>awab.azharii@gmail.com</li>
+            </div> -->
+
+          </div>
+
+          <!--CONTACT SECTION-->
+          <div id="contact" class="w3-container w3-margin-top-20-percent w3-cursive">
+            <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">MY CONTACT DETAILS</h3>
+            <div class="w3-margin-top-2" style="font-weight: 500;">
+              <p>Name: Awab Azhari </p>
+              <p>Adress: Sudan</p>
+              <p>Phone number: +249966063554</p>
+              <p>E-mail: awab.azharii@gmail.com</p>
+            </div>
+          </div>
+
+        <!--FOOTER-->
+        <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+        <footer class="w3-container w3-border-top w3-center w3-margin-top-4">
+          <p>& 2024 - Awab Azhari</p>
+           <p class="w3-small">This website was made with W3schools Spaces. Make your own free website today!</p>
+          <a class="w3-button w3-round-xxlarge w3-small w3-light-grey" href="https://www.w3schools.com/spaces" target="_blank">Start now</a> 
+        <!-- End footer -->
+        </footer>
+
+        <!--END OF CV SECTION-->
+      </section>      
+    </section>
+    <script>
+      // Function to toggle mobile navigation
+      function toggleNavigation() {
+        let nav = document.getElementById("mobile-nav");
+        if (nav.classList.contains('w3-show')) {
+          nav.classList.remove('w3-show');
+        } else { 
+          nav.classList.add('w3-show');
+        }
+      }
+    </script>
+    <script>
+      // Script to load feather icons
+      feather.replace()
+    </script>
+  </body>
+          </html>
