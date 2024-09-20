@@ -9,6 +9,23 @@ body * {
     margin: 0;
     scroll-behavior: smooth;
   }
+
+
+  #mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#mode-icon {
+  width: 30px; /* Adjust size as needed */
+  height: 30px; /* Adjust size as needed */
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
   
   h1,
   h2,
