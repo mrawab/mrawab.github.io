@@ -197,6 +197,22 @@
     </section>
     <script>
       // Function to toggle mobile navigation
+      const modeToggle = document.getElementById('mode-toggle');
+const modeIcon = document.getElementById('mode-icon');
+
+let isDarkMode = false;
+
+modeToggle.addEventListener('click', () => {
+  isDarkMode = !isDarkMode;
+  
+  if (isDarkMode) {
+    document.body.classList.add('dark-mode');
+    modeIcon.src = 'dark-icon.png';
+  } else {
+    document.body.classList.remove('dark-mode');
+    modeIcon.src = 'light-icon.png';
+  }
+});
       function toggleNavigation() {
         let nav = document.getElementById("mobile-nav");
         if (nav.classList.contains('w3-show')) {
