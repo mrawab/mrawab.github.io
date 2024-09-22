@@ -32,7 +32,7 @@
       <!-- SOCIAL SECTION -->
       <section class="image-section w3-quarter w3-fixed w3-padding-small">
         <!--IMAGE/AVATAR-->
-        <img src="main.png" style="border-width: 3px !important;"/>
+        <img src="main.png" id="avatar-image" style="border-width: 3px !important;" alt="Avatar Image" />
         <!--SOCIAL NETWORK BUTTONS-->
         <div class="links w3-margin-top w3-padding-small">
           <a class="icon-link w3-text-sand w3-hover-text-amber" href="https://www.facebook.com/awabazharii?mibextid=ZbWKwL" target="_blank">
@@ -201,21 +201,24 @@
     <script>
       // Function to toggle mobile navigation
       const modeToggle = document.getElementById('mode-toggle');
-const modeIcon = document.getElementById('mode-icon');
+  const modeIcon = document.getElementById('mode-icon');
+  const avatarImage = document.getElementById('avatar-image');
 
-let isDarkMode = false;
+  let isDarkMode = false;
 
-modeToggle.addEventListener('click', () => {
-  isDarkMode = !isDarkMode;
-  
-  if (isDarkMode) {
-    document.body.classList.add('dark-mode');
-    modeIcon.src = 'dark-icon.png';
-  } else {
-    document.body.classList.remove('dark-mode');
-    modeIcon.src = 'light-icon.png';
-  }
-});
+  modeToggle.addEventListener('click', () => {
+    isDarkMode = !isDarkMode;
+    
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+      modeIcon.src = 'dark_mode.png';
+      avatarImage.src = 'main.jpg';  // Change to dark mode avatar
+    } else {
+      document.body.classList.remove('dark-mode');
+      modeIcon.src = 'light_mode.png';
+      avatarImage.src = 'main.png'; // Change to light mode avatar
+    }
+  });
       function toggleNavigation() {
         let nav = document.getElementById("mobile-nav");
         if (nav.classList.contains('w3-show')) {
