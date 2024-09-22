@@ -75,11 +75,11 @@ ul li {
 }
 
 .dark-mode .icon-link {
-  color: #f0f0f0; /* Color in dark mode */
+  color: #f0f0f0 !important; /* Color in dark mode */
 }
 
 .icon-link:hover {
-  color: #ff9800; /* Hover effect */
+  color: #ff9800 !important; /* Hover effect */
 }
 
 .content-container {
