@@ -3,7 +3,8 @@ body * {
   font-family: "Montserrat", sans-serif;
 }
 
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
@@ -25,23 +26,10 @@ html, body {
   color: #fff;
 }
 
-.light-mode {
-  background-color: #fff;
-  color: #000;
-}
-
-/* Background color change for icon links */
-.dark-mode .icon-link {
-  background-color: #444; /* Dark background for icons in dark mode */
-  color: #fff; /* White icons */
-}
-
-.light-mode .icon-link {
-  background-color: #ddd; /* Light background for icons in light mode */
-  color: #333; /* Dark icons */
-}
-
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: bold;
 }
 
@@ -53,8 +41,12 @@ ul li {
 .image-section {
   height: 100vh;
   text-align: center;
-  background-color: #262626;
   padding: 20px;
+  background-color: #f0f0f0; /* Default background for light mode */
+}
+
+.dark-mode .image-section {
+  background-color: #262626; /* Background for dark mode */
 }
 
 .image-section img {
@@ -62,6 +54,7 @@ ul li {
   max-height: 60%;
   margin-top: 50px !important;
   object-fit: cover;
+  border-radius: 10px; /* Added border radius for a smoother look */
 }
 
 .links {
@@ -76,10 +69,17 @@ ul li {
 
 .icon-link {
   text-decoration: none;
-  font-size: 48px auto;
+  font-size: 48px;
   padding: 26px;
-  border-radius: 50%; /* Rounded icons */
-  display: inline-block;
+  color: #333; /* Default color */
+}
+
+.dark-mode .icon-link {
+  color: #f0f0f0; /* Color in dark mode */
+}
+
+.icon-link:hover {
+  color: #ff9800; /* Hover effect */
 }
 
 .content-container {
@@ -100,6 +100,10 @@ ul li {
   font-size: 64px;
 }
 
+.w3-ul li {
+  padding: 8px 0px;
+}
+
 /* Utilities */
 .w3-margin-top-2 {
   margin-top: 32px;
@@ -113,12 +117,22 @@ ul li {
   margin-top: 20%;
 }
 
+.w3-sticky {
+  position: sticky;
+  top: 0;
+}
+
+.w3-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
 /* Media queries */
 @media screen and (max-width: 1200px) {
   .home {
     width: 90%;
   }
-
   .content-container {
     width: 80% !important;
   }
@@ -132,7 +146,6 @@ ul li {
   .home {
     width: 100%;
   }
-
   .home h1 {
     font-size: 48px;
   }
@@ -163,7 +176,7 @@ ul li {
   .home h1 {
     font-size: 32px;
   }
-
+  
   .home h2 {
     font-size: 24px;
   }
