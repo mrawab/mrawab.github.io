@@ -220,11 +220,12 @@
 
       document.onreadystatechange = function () {
     if (document.readyState === 'loading') {
-        // Start the custom progress bar when the page starts loading
-        startProgressBar();
+        startProgressBar(); // Start the bar when the page starts loading
+    } else if (document.readyState === 'interactive') {
+        // Simulate progress as elements load
+        simulateElementLoading();
     } else if (document.readyState === 'complete') {
-        // When page load is complete, finish the progress bar
-        finishProgressBar();
+        finishProgressBar(); // Finish the bar once the page is fully loaded
     }
 };
 
@@ -234,22 +235,34 @@ let progressInterval;
 function startProgressBar() {
     const progressBar = document.getElementById('custom-progress-bar');
     progressBar.style.display = 'block';
-    
-    // Simulate loading speed based on network latency
+
+    // Simulate gradual loading progress
     progressInterval = setInterval(() => {
-        progress += Math.random() * 20; // Simulate progress
-        if (progress < 100) {
+        progress += Math.random() * 15; // Increase progress randomly
+        if (progress < 90) {
             progressBar.style.width = `${progress}%`;
         } else {
             clearInterval(progressInterval);
         }
-    }, 300); // Adjust speed based on network/environment
+    }, 200);
+}
+
+function simulateElementLoading() {
+    const progressBar = document.getElementById('custom-progress-bar');
+    
+    // Additional progress during 'interactive' state
+    progressInterval = setInterval(() => {
+        progress += Math.random() * 5; // Simulate additional load
+        if (progress < 95) {
+            progressBar.style.width = `${progress}%`;
+        }
+    }, 100);
 }
 
 function finishProgressBar() {
     const progressBar = document.getElementById('custom-progress-bar');
     
-    // Complete the bar and then hide it
+    // Complete the bar and hide after a delay
     progressBar.style.width = '100%';
     setTimeout(() => {
         progressBar.style.opacity = '0';
@@ -258,8 +271,8 @@ function finishProgressBar() {
             progressBar.style.opacity = '1';
             progressBar.style.width = '0';
             progress = 0;
-        }, 500); // Allow for smooth fade-out
-    }, 500); // Give time for progress bar to visually finish
+        }, 500); // Smooth fade out
+    }, 500); // Time for progress bar to visually complete
 }
       
       // Function to toggle mobile navigation
