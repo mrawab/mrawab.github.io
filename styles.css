@@ -26,7 +26,7 @@ body {
   color: #fff;
 }
 
-
+/* Custom progress bar with orange-red-yellow glow */
 #custom-progress-bar {
     position: fixed;
     top: 0;
@@ -39,9 +39,15 @@ body {
     transition: width var(--nprogress-speed) ease, opacity 0.5s ease;
 }
 
-/* Hides the native spinner in most modern browsers */
+/* Hide native progress bar spinner (not possible on all browsers) */
 html {
     -webkit-progress-bar: none;
+    progress[value]::-webkit-progress-value {
+        background: none;
+    }
+    progress[value]::-webkit-progress-bar {
+        background: none;
+    }
 }
 
 h1,
