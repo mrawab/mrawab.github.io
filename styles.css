@@ -39,7 +39,7 @@ body {
 #loading-bar {
     height: 100%;
     width: 0;
-    background-color: #3498db; /* Loading bar color */
+    background-color: f1c40f; /* Loading bar color */
     transition: width 0.5s; /* Smooth transition */
 }
 
