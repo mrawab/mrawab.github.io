@@ -31,17 +31,14 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 0; /* Start at 0 width */
-    height: 4px; /* Height of the bar */
-    background-color: yellow; /* Default color */
-    z-index: 9999; /* Ensure it's above other elements */
-    transition: width var(--nprogress-speed) ease, opacity 0.5s ease;
-    box-shadow: 0 0 10px rgba(255, 165, 0, 0.8); /* Glow effect */
+    width: 0;
+    height: 4px;
+    background-color: yellow;
+    z-index: 9999;
+    transition: width 0.4s ease, opacity 0.5s ease;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
 }
 
-body {
-    overflow: hidden; /* Prevent scrolling while loading */
-}
 
 h1,
 h2,
