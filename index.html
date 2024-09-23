@@ -17,7 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
     <script src="https://unpkg.com/feather-icons@4.28.0/dist/feather.min.js"></script>
   </head>
-  <body>   
+  <body>
+    <div id="custom-progress-bar"></div>
     <section>
       <!-- MOBILE NAVIGATION -->
       <div class="w3-container w3-padding-16 w3-border-bottom w3-hide-medium w3-hide-large">
@@ -217,85 +218,36 @@
     </section>
     <script>
       
-       // Function to get network speed using Network Information API
-function getNetworkSpeed() {
-    if (navigator.connection) {
-        return navigator.connection.effectiveType;
-    }
-    return "4g"; // Default to 4g if no information is available
-}
+       
+      document.addEventListener('DOMContentLoaded', function() {
+    const progressBar = document.getElementById('custom-progress-bar');
 
-// Adjust progress bar speed based on network conditions
-function adjustProgressBarSpeed() {
-    const networkSpeed = getNetworkSpeed();
-    let speedMultiplier = 1;
+    // Simulate loading progress
+    function simulateLoading() {
+        let percent = 0;
+        progressBar.classList.add('active'); // Start glow effect
 
-    switch (networkSpeed) {
-        case '4g':
-            speedMultiplier = 1; // Fast speed
-            break;
-        case '3g':
-            speedMultiplier = 1.5; // Medium speed
-            break;
-        case '2g':
-            speedMultiplier = 2; // Slow speed
-            break;
-        case 'slow-2g':
-            speedMultiplier = 3; // Very slow speed
-            break;
-        default:
-            speedMultiplier = 1;
-            break;
+        const interval = setInterval(() => {
+            if (percent >= 100) {
+                clearInterval(interval);
+                progressBar.style.width = '100%';
+                setTimeout(() => {
+                    progressBar.style.opacity = '0'; // Fade out
+                    setTimeout(() => {
+                        progressBar.style.width = '0'; // Reset for next load
+                        progressBar.style.opacity = '1'; // Reset opacity
+                        progressBar.classList.remove('active'); // Stop glow effect
+                    }, 500); // Match fade duration
+                }, 300); // Duration before fading out
+            } else {
+                percent += 10; // Increment progress
+                progressBar.style.width = percent + '%';
+            }
+        }, 200); // Adjust interval as needed
     }
 
-    // Adjust NProgress speed dynamically
-    document.documentElement.style.setProperty('--nprogress-speed', `${speedMultiplier}s`);
-}
-
-// Create a custom progress bar effect
-function createProgressBar() {
-    const progressBar = document.createElement('div');
-    progressBar.id = 'custom-progress-bar';
-    progressBar.style.position = 'fixed';
-    progressBar.style.top = '0';
-    progressBar.style.left = '0';
-    progressBar.style.width = '0%';
-    progressBar.style.height = '4px';
-    progressBar.style.backgroundColor = '#FFD700'; // Yellow color
-    progressBar.style.transition = 'width 0.3s ease';
-    document.body.appendChild(progressBar);
-
-    return progressBar;
-}
-
-let progressBar = createProgressBar();
-
-// Start the custom progress bar when the page starts loading
-window.addEventListener('loadstart', function() {
-    progressBar.style.width = '0%';
+    simulateLoading(); // Start simulation on load
 });
-
-// Adjust speed once the network is detected
-window.addEventListener('DOMContentLoaded', function() {
-    adjustProgressBarSpeed();
-    progressBar.style.width = '50%'; // Start with 50% once DOM is ready
-});
-
-// Update progress bar on resource loading
-document.onreadystatechange = function () {
-    if (document.readyState === 'interactive') {
-        progressBar.style.width = '80%'; // Move to 80% when DOM is interactive
-    }
-};
-
-// Complete the custom progress bar when the page fully loads
-window.addEventListener('load', function() {
-    progressBar.style.width = '100%'; // Finish the progress bar
-    setTimeout(() => {
-        progressBar.style.opacity = '0'; // Fade out after load
-    }, 500); // Delay fade-out for effect
-}); 
-      
       // Function to toggle mobile navigation
       const modeToggle = document.getElementById('mode-toggle');
   const modeIcon = document.getElementById('mode-icon');
