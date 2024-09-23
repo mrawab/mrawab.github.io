@@ -217,17 +217,19 @@
     </section>
     <script>
       
+       // Function to get network speed using Network Information API
 function getNetworkSpeed() {
     if (navigator.connection) {
         return navigator.connection.effectiveType;
     }
     return "4g"; // Default to 4g if no information is available
 }
-      function adjustProgressBarSpeed() {
-    const networkSpeed = getNetworkSpeed();
-    let speedMultiplier = 1; // Default speed multiplier
 
-    // Adjust speed based on network type
+// Adjust progress bar speed based on network conditions
+function adjustProgressBarSpeed() {
+    const networkSpeed = getNetworkSpeed();
+    let speedMultiplier = 1;
+
     switch (networkSpeed) {
         case '4g':
             speedMultiplier = 1; // Fast speed
@@ -242,33 +244,41 @@ function getNetworkSpeed() {
             speedMultiplier = 3; // Very slow speed
             break;
         default:
-            speedMultiplier = 1; // Default for unknown speed
+            speedMultiplier = 1;
             break;
     }
 
-    // Modify NProgress animation speed and ease settings
+    // Adjust NProgress speed dynamically
     document.documentElement.style.setProperty('--nprogress-speed', `${speedMultiplier}s`);
 }
 
-// Call this function to adjust progress speed on page load
-window.addEventListener('load', function() {
-    adjustProgressBarSpeed();
+// Start NProgress when the page starts loading
+window.addEventListener('loadstart', function() {
     NProgress.start();
-
-    // Simulate progress for demo purposes
-    setTimeout(function() {
-        NProgress.done();
-    }, 2000 * speedMultiplier); // Adjust timing based on network speed
-});
-      
-      // Show loading bar on AJAX requests (optional)
-$(document).on('ajaxStart', function() {
-  NProgress.start();
 });
 
-$(document).on('ajaxComplete', function() {
-  NProgress.done();
+// Adjust speed once the network is detected
+window.addEventListener('DOMContentLoaded', function() {
+    adjustProgressBarSpeed();
 });
+
+// Complete NProgress when the page fully loads
+window.addEventListener('load', function() {
+    NProgress.done();
+});
+
+// Simulate gradual loading halfway when the document is interactive
+document.onreadystatechange = function () {
+    if (document.readyState === 'interactive') {
+        NProgress.set(0.5); // Set the progress halfway
+    }
+};
+
+// Complete NProgress after all resources have been loaded
+window.onload = function() {
+    NProgress.done(); // Complete the progress bar after full load
+};
+
       
       // Function to toggle mobile navigation
       const modeToggle = document.getElementById('mode-toggle');
