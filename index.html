@@ -219,10 +219,10 @@
     <script>
 
       document.onreadystatechange = function () {
+    const progressBar = document.getElementById('custom-progress-bar');
+    
     if (document.readyState === 'loading') {
         startProgressBar();
-    } else if (document.readyState === 'interactive') {
-        simulateElementLoading();
     } else if (document.readyState === 'complete') {
         finishProgressBar();
     }
@@ -234,40 +234,29 @@ let progressInterval;
 function startProgressBar() {
     const progressBar = document.getElementById('custom-progress-bar');
     progressBar.style.display = 'block';
-
+    
+    progress = 0;
     progressInterval = setInterval(() => {
-        progress += Math.random() * 10; // Smooth progress increment
-        if (progress < 90) {
-            progressBar.style.width = `${progress}%`;
-        } else {
+        progress += Math.random() * 5; // Increment progress
+        if (progress >= 90) {
             clearInterval(progressInterval);
         }
-    }, 200);
-}
-
-function simulateElementLoading() {
-    const progressBar = document.getElementById('custom-progress-bar');
-
-    progressInterval = setInterval(() => {
-        progress += Math.random() * 5; // Additional progress during loading
-        if (progress < 95) {
-            progressBar.style.width = `${progress}%`;
-        }
-    }, 100);
+        progressBar.style.width = `${Math.min(progress, 90)}%`; // Limit to 90%
+    }, 100); // Adjust interval for smoother loading
 }
 
 function finishProgressBar() {
     const progressBar = document.getElementById('custom-progress-bar');
 
+    // Ensure the bar fills completely before hiding
     progressBar.style.width = '100%';
     setTimeout(() => {
         progressBar.style.opacity = '0'; // Smooth fade out after completion
         setTimeout(() => {
-            progressBar.style.display = 'none';
+            progressBar.style.display = 'none'; // Clean up after fade-out
             progressBar.style.opacity = '1';
-            progressBar.style.width = '0';
-            progress = 0;
-        }, 500); // Clean up after fade-out
+            progressBar.style.width = '0'; // Reset for next load
+        }, 500);
     }, 500);
 }
       
