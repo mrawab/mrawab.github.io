@@ -8,7 +8,6 @@ body {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
-  overflow: hidden;
 }
 
 #mode-toggle {
@@ -28,37 +27,20 @@ body {
 }
 
 
-/* Custom Progress Bar */
 #custom-progress-bar {
     position: fixed;
     top: 0;
     left: 0;
-    height: 4px; /* Adjust height as needed */
-    background-color: yellow; /* Base color */
-    z-index: 9999; /* Ensure it's on top */
-    width: 0; /* Start with width 0 */
+    width: 0; /* Start at 0 width */
+    height: 4px; /* Height of the bar */
+    background-color: yellow; /* Default color */
+    z-index: 9999; /* Ensure it's above other elements */
     transition: width var(--nprogress-speed) ease, opacity 0.5s ease;
-    box-shadow: 
-        0 0 10px orange, 
-        0 0 20px red, 
-        0 0 30px yellow; /* Glow effect */
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.8); /* Glow effect */
 }
 
-/* Glow Animation */
-@keyframes glow {
-    0% {
-        box-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
-    }
-    50% {
-        box-shadow: 0 0 20px orange, 0 0 30px red, 0 0 40px yellow;
-    }
-    100% {
-        box-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
-    }
-}
-
-#custom-progress-bar.active {
-    animation: glow 1s infinite alternate; /* Glow animation */
+body {
+    overflow: hidden; /* Prevent scrolling while loading */
 }
 
 h1,
