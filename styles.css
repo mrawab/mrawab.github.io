@@ -35,10 +35,8 @@ body {
 }
 
 /* Add the spinner to give it more visual interest */
-#nprogress .spinner-icon {
-    border-top-color: yellow;
-    border-left-color: yellow;
-}
+
+
 
 /* Glowing effect with keyframes */
 #nprogress .bar:before {
@@ -56,10 +54,10 @@ body {
 
 @keyframes glow {
     0% {
-        box-shadow: 0 0 5px yellow;
+        box-shadow: 0 0 5px red;
     }
     50% {
-        box-shadow: 0 0 20px yellow;
+        box-shadow: 0 0 20px orange;
     }
     100% {
         box-shadow: 0 0 5px yellow;
