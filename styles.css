@@ -36,13 +36,6 @@ body {
   transition: width var(--nprogress-speed, 0.4s) ease, opacity var(--nprogress-speed, 0.6s);
 }
 
-/* Optional: Customize the spinner color (if you want a spinner) */
-#nprogress .spinner-icon {
-  border-top-color: yellow !important;
-  border-left-color: yellow !important;
-}
-
-/* Add glowing effect */
 /* Glowing effect with keyframes */
 #nprogress .bar:before {
   content: "";
