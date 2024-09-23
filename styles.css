@@ -26,19 +26,24 @@ body {
   color: #fff;
 }
 
-/* Customize the NProgress bar to be yellow */
+
+#custom-progress-bar {
+    transition: width var(--nprogress-speed) ease, opacity 0.5s ease;
+}
+
+/* Customize the NProgress bar to be yellow 
 #nprogress .bar {
     background: yellow !important;
     height: 4px;
     box-shadow: 0 0 10px yellow, 0 0 5px yellow;
     transition: width 0.4s ease, opacity 0.6s ease;
-}
+}*/
 
 /* Add the spinner to give it more visual interest */
 
 
 
-/* Glowing effect with keyframes */
+/* Glowing effect with keyframes 
 #nprogress .bar:before {
     content: "";
     display: block;
@@ -62,7 +67,7 @@ body {
     100% {
         box-shadow: 0 0 5px yellow;
     }
-}
+}*/
 
 h1,
 h2,
