@@ -26,20 +26,36 @@ body {
   color: #fff;
 }
 
-/* Custom progress bar with orange-red-yellow glow */
+/* Custom progress bar with a smooth, modern design */
 #custom-progress-bar {
     position: fixed;
     top: 0;
     left: 0;
     width: 0;
-    height: 4px;
+    height: 5px; /* Slightly thicker for visibility */
     background: linear-gradient(90deg, orange, red, yellow);
-    box-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.4), 0 0 30px rgba(255, 255, 0, 0.3);
     z-index: 9999;
-    transition: width var(--nprogress-speed) ease, opacity 0.5s ease;
+    border-radius: 5px; /* Rounded edges for a sleek look */
+    transition: width 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    transform-origin: left; /* Animates from the left edge */
 }
 
-/* Hide native progress bar spinner (not possible on all browsers) */
+/* Add an inner glow effect for a modern look */
+#custom-progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.5), 0 0 25px rgba(255, 0, 0, 0.4), 0 0 35px rgba(255, 255, 0, 0.3);
+    border-radius: 5px; /* Matches the bar's rounded edges */
+    pointer-events: none;
+}
+
+/* Hide native progress indicators on some browsers */
 html {
     -webkit-progress-bar: none;
     progress[value]::-webkit-progress-value {
@@ -48,7 +64,7 @@ html {
     progress[value]::-webkit-progress-bar {
         background: none;
     }
-}
+} 
 
 h1,
 h2,
