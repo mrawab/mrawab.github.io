@@ -27,47 +27,38 @@ body {
 }
 
 
+/* Custom Progress Bar */
 #custom-progress-bar {
-    transition: width var(--nprogress-speed) ease, opacity 0.5s ease;
-}
-
-/* Customize the NProgress bar to be yellow 
-#nprogress .bar {
-    background: yellow !important;
-    height: 4px;
-    box-shadow: 0 0 10px yellow, 0 0 5px yellow;
-    transition: width 0.4s ease, opacity 0.6s ease;
-}*/
-
-/* Add the spinner to give it more visual interest */
-
-
-
-/* Glowing effect with keyframes 
-#nprogress .bar:before {
-    content: "";
-    display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
-    background: radial-gradient(circle, rgba(255,255,0,0.3), rgba(255,255,0,0));
-    opacity: 0.7;
-    animation: glow 1.5s infinite ease-in-out;
+    height: 4px; /* Adjust height as needed */
+    background-color: yellow; /* Base color */
+    z-index: 9999; /* Ensure it's on top */
+    width: 0; /* Start with width 0 */
+    transition: width var(--nprogress-speed) ease, opacity 0.5s ease;
+    box-shadow: 
+        0 0 10px orange, 
+        0 0 20px red, 
+        0 0 30px yellow; /* Glow effect */
 }
 
+/* Glow Animation */
 @keyframes glow {
     0% {
-        box-shadow: 0 0 5px red;
+        box-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
     }
     50% {
-        box-shadow: 0 0 20px orange;
+        box-shadow: 0 0 20px orange, 0 0 30px red, 0 0 40px yellow;
     }
     100% {
-        box-shadow: 0 0 5px yellow;
+        box-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
     }
-}*/
+}
+
+#custom-progress-bar.active {
+    animation: glow 1s infinite alternate; /* Glow animation */
+}
 
 h1,
 h2,
