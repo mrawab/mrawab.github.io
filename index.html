@@ -224,6 +224,51 @@ window.addEventListener('load', function() {
   NProgress.done();
 });
 
+
+function getNetworkSpeed() {
+    if (navigator.connection) {
+        return navigator.connection.effectiveType;
+    }
+    return "4g"; // Default to 4g if no information is available
+}
+      function adjustProgressBarSpeed() {
+    const networkSpeed = getNetworkSpeed();
+    let speedMultiplier = 1; // Default speed multiplier
+
+    // Adjust speed based on network type
+    switch (networkSpeed) {
+        case '4g':
+            speedMultiplier = 1; // Fast speed
+            break;
+        case '3g':
+            speedMultiplier = 1.5; // Medium speed
+            break;
+        case '2g':
+            speedMultiplier = 2; // Slow speed
+            break;
+        case 'slow-2g':
+            speedMultiplier = 3; // Very slow speed
+            break;
+        default:
+            speedMultiplier = 1; // Default for unknown speed
+            break;
+    }
+
+    // Modify NProgress animation speed and ease settings
+    document.documentElement.style.setProperty('--nprogress-speed', `${speedMultiplier}s`);
+}
+
+// Call this function to adjust progress speed on page load
+window.addEventListener('load', function() {
+    adjustProgressBarSpeed();
+    NProgress.start();
+
+    // Simulate progress for demo purposes
+    setTimeout(function() {
+        NProgress.done();
+    }, 2000 * speedMultiplier); // Adjust timing based on network speed
+});
+      
       // Show loading bar on AJAX requests (optional)
 $(document).on('ajaxStart', function() {
   NProgress.start();
