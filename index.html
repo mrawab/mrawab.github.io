@@ -218,36 +218,30 @@
     </section>
     <script>
       
-       
-      document.addEventListener('DOMContentLoaded', function() {
+       document.addEventListener('DOMContentLoaded', function () {
     const progressBar = document.getElementById('custom-progress-bar');
-
-    // Simulate loading progress
-    function simulateLoading() {
-        let percent = 0;
-        progressBar.classList.add('active'); // Start glow effect
-
+    const loading = () => {
+        let progress = 0;
         const interval = setInterval(() => {
-            if (percent >= 100) {
+            if (progress < 100) {
+                progress += 10; // Increase progress
+                progressBar.style.width = `${progress}%`;
+            } else {
                 clearInterval(interval);
-                progressBar.style.width = '100%';
                 setTimeout(() => {
-                    progressBar.style.opacity = '0'; // Fade out
+                    progressBar.style.opacity = 0; // Fade out
                     setTimeout(() => {
                         progressBar.style.width = '0'; // Reset for next load
-                        progressBar.style.opacity = '1'; // Reset opacity
-                        progressBar.classList.remove('active'); // Stop glow effect
-                    }, 500); // Match fade duration
-                }, 300); // Duration before fading out
-            } else {
-                percent += 10; // Increment progress
-                progressBar.style.width = percent + '%';
+                        progressBar.style.opacity = 1; // Reset opacity
+                    }, 500);
+                }, 500);
             }
-        }, 200); // Adjust interval as needed
-    }
+        }, 300); // Adjust speed as necessary
+    };
 
-    simulateLoading(); // Start simulation on load
+    loading();
 });
+      
       // Function to toggle mobile navigation
       const modeToggle = document.getElementById('mode-toggle');
   const modeIcon = document.getElementById('mode-icon');
