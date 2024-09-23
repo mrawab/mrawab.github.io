@@ -26,40 +26,44 @@ body {
   color: #fff;
 }
 
-/* Change the loading bar to yellow */
-/* Change the loading bar to yellow */
-/* Customize the loading bar with the dynamic speed */
+/* Customize the NProgress bar to be yellow */
 #nprogress .bar {
-  background: yellow !important;
-  height: 4px; 
-  box-shadow: 0 0 10px yellow, 0 0 5px yellow;
-  transition: width var(--nprogress-speed, 0.4s) ease, opacity var(--nprogress-speed, 0.6s);
+    background: yellow !important;
+    height: 4px;
+    box-shadow: 0 0 10px yellow, 0 0 5px yellow;
+    transition: width 0.4s ease, opacity 0.6s ease;
+}
+
+/* Add the spinner to give it more visual interest */
+#nprogress .spinner-icon {
+    border-top-color: yellow;
+    border-left-color: yellow;
 }
 
 /* Glowing effect with keyframes */
 #nprogress .bar:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: radial-gradient(circle, rgba(255,255,0,0.2), rgba(255,255,0,0));
-  opacity: 0.7;
-  animation: glow var(--nprogress-speed, 1.5s) infinite ease-in-out;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(255,255,0,0.3), rgba(255,255,0,0));
+    opacity: 0.7;
+    animation: glow 1.5s infinite ease-in-out;
 }
 
 @keyframes glow {
-  0% {
-    box-shadow: 0 0 5px yellow;
-  }
-  50% {
-    box-shadow: 0 0 20px yellow;
-  }
-  100% {
-    box-shadow: 0 0 5px yellow;
-  }
+    0% {
+        box-shadow: 0 0 5px yellow;
+    }
+    50% {
+        box-shadow: 0 0 20px yellow;
+    }
+    100% {
+        box-shadow: 0 0 5px yellow;
+    }
 }
 
 h1,
