@@ -216,6 +216,23 @@
       </section>      
     </section>
     <script>
+      // Start the loading bar when the page starts loading
+window.addEventListener('load', function() {
+  NProgress.start();  // Start the loading bar
+
+  // Stop the loading bar once the page fully loads
+  NProgress.done();
+});
+
+      // Show loading bar on AJAX requests (optional)
+$(document).on('ajaxStart', function() {
+  NProgress.start();
+});
+
+$(document).on('ajaxComplete', function() {
+  NProgress.done();
+});
+      
       // Function to toggle mobile navigation
       const modeToggle = document.getElementById('mode-toggle');
   const modeIcon = document.getElementById('mode-icon');
