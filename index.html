@@ -252,33 +252,49 @@ function adjustProgressBarSpeed() {
     document.documentElement.style.setProperty('--nprogress-speed', `${speedMultiplier}s`);
 }
 
-// Start NProgress when the page starts loading
+// Create a custom progress bar effect
+function createProgressBar() {
+    const progressBar = document.createElement('div');
+    progressBar.id = 'custom-progress-bar';
+    progressBar.style.position = 'fixed';
+    progressBar.style.top = '0';
+    progressBar.style.left = '0';
+    progressBar.style.width = '0%';
+    progressBar.style.height = '4px';
+    progressBar.style.backgroundColor = '#FFD700'; // Yellow color
+    progressBar.style.transition = 'width 0.3s ease';
+    document.body.appendChild(progressBar);
+
+    return progressBar;
+}
+
+let progressBar = createProgressBar();
+
+// Start the custom progress bar when the page starts loading
 window.addEventListener('loadstart', function() {
-    NProgress.start();
+    progressBar.style.width = '0%';
 });
 
 // Adjust speed once the network is detected
 window.addEventListener('DOMContentLoaded', function() {
     adjustProgressBarSpeed();
+    progressBar.style.width = '50%'; // Start with 50% once DOM is ready
 });
 
-// Complete NProgress when the page fully loads
-window.addEventListener('load', function() {
-    NProgress.done();
-});
-
-// Simulate gradual loading halfway when the document is interactive
+// Update progress bar on resource loading
 document.onreadystatechange = function () {
     if (document.readyState === 'interactive') {
-        NProgress.set(0.5); // Set the progress halfway
+        progressBar.style.width = '80%'; // Move to 80% when DOM is interactive
     }
 };
 
-// Complete NProgress after all resources have been loaded
-window.onload = function() {
-    NProgress.done(); // Complete the progress bar after full load
-};
-
+// Complete the custom progress bar when the page fully loads
+window.addEventListener('load', function() {
+    progressBar.style.width = '100%'; // Finish the progress bar
+    setTimeout(() => {
+        progressBar.style.opacity = '0'; // Fade out after load
+    }, 500); // Delay fade-out for effect
+}); 
       
       // Function to toggle mobile navigation
       const modeToggle = document.getElementById('mode-toggle');
