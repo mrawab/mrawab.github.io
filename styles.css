@@ -28,11 +28,12 @@ body {
 
 /* Change the loading bar to yellow */
 /* Change the loading bar to yellow */
+/* Customize the loading bar with the dynamic speed */
 #nprogress .bar {
   background: yellow !important;
-  height: 4px; /* Change the thickness */
+  height: 4px; 
   box-shadow: 0 0 10px yellow, 0 0 5px yellow;
-  transition: width 0.4s ease, opacity 0.6s ease; /* Smooth transition for width */
+  transition: width var(--nprogress-speed, 0.4s) ease, opacity var(--nprogress-speed, 0.6s);
 }
 
 /* Optional: Customize the spinner color (if you want a spinner) */
@@ -42,6 +43,7 @@ body {
 }
 
 /* Add glowing effect */
+/* Glowing effect with keyframes */
 #nprogress .bar:before {
   content: "";
   display: block;
@@ -52,10 +54,9 @@ body {
   left: 0;
   background: radial-gradient(circle, rgba(255,255,0,0.2), rgba(255,255,0,0));
   opacity: 0.7;
-  animation: glow 1.5s infinite ease-in-out;
+  animation: glow var(--nprogress-speed, 1.5s) infinite ease-in-out;
 }
 
-/* Keyframes for glowing animation */
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px yellow;
