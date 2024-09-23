@@ -26,6 +26,17 @@ body {
   color: #fff;
 }
 
+/* Change the loading bar to yellow */
+#nprogress .bar {
+  background: yellow !important;
+}
+
+/* Optional: Customize the spinner color */
+#nprogress .spinner-icon {
+  border-top-color: yellow !important;
+  border-left-color: yellow !important;
+}
+
 h1,
 h2,
 h3,
