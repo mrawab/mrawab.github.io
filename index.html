@@ -18,7 +18,9 @@
     <script src="https://unpkg.com/feather-icons@4.28.0/dist/feather.min.js"></script>
   </head>
   <body>
-    <div id="custom-progress-bar"></div>
+    <div id="loading-bar-container">
+    <div id="loading-bar"></div>
+    </div>
     <section>
       <!-- MOBILE NAVIGATION -->
       <div class="w3-container w3-padding-16 w3-border-bottom w3-hide-medium w3-hide-large">
@@ -218,47 +220,21 @@
     </section>
     <script>
 
-      document.onreadystatechange = function () {
-    const progressBar = document.getElementById('custom-progress-bar');
-    
-    if (document.readyState === 'loading') {
-        startProgressBar();
-    } else if (document.readyState === 'complete') {
-        finishProgressBar();
+      function updateLoadingBar(percentage) {
+    const loadingBar = document.getElementById('loading-bar');
+    loadingBar.style.width = percentage + '%';
+}
+
+// Example usage:
+let loadingPercentage = 0;
+const interval = setInterval(() => {
+    if (loadingPercentage < 100) {
+        loadingPercentage += 10; // Increase percentage
+        updateLoadingBar(loadingPercentage);
+    } else {
+        clearInterval(interval);
     }
-};
-
-let progress = 0;
-let progressInterval;
-
-function startProgressBar() {
-    const progressBar = document.getElementById('custom-progress-bar');
-    progressBar.style.display = 'block';
-    
-    progress = 0;
-    progressInterval = setInterval(() => {
-        progress += Math.random() * 5; // Increment progress
-        if (progress >= 90) {
-            clearInterval(progressInterval);
-        }
-        progressBar.style.width = `${Math.min(progress, 90)}%`; // Limit to 90%
-    }, 100); // Adjust interval for smoother loading
-}
-
-function finishProgressBar() {
-    const progressBar = document.getElementById('custom-progress-bar');
-
-    // Ensure the bar fills completely before hiding
-    progressBar.style.width = '100%';
-    setTimeout(() => {
-        progressBar.style.opacity = '0'; // Smooth fade out after completion
-        setTimeout(() => {
-            progressBar.style.display = 'none'; // Clean up after fade-out
-            progressBar.style.opacity = '1';
-            progressBar.style.width = '0'; // Reset for next load
-        }, 500);
-    }, 500);
-}
+}, 500); // Update every half second
       
       // Function to toggle mobile navigation
       const modeToggle = document.getElementById('mode-toggle');
