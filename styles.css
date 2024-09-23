@@ -26,22 +26,22 @@ body {
   color: #fff;
 }
 
-/* Custom progress bar with a smooth, modern design */
+/* Custom progress bar with modern design */
 #custom-progress-bar {
     position: fixed;
     top: 0;
     left: 0;
     width: 0;
-    height: 5px; /* Slightly thicker for visibility */
-    background: linear-gradient(90deg, orange, red, yellow);
-    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.4), 0 0 30px rgba(255, 255, 0, 0.3);
+    height: 5px; /* Adjust height for visibility */
+    background: linear-gradient(90deg, orange, yellow);
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 
+                0 0 20px rgba(255, 255, 0, 0.5);
     z-index: 9999;
-    border-radius: 5px; /* Rounded edges for a sleek look */
-    transition: width 0.3s ease-in-out, opacity 0.5s ease-in-out;
-    transform-origin: left; /* Animates from the left edge */
+    border-radius: 5px; /* Rounded edges */
+    transition: width 0.2s ease, opacity 0.5s ease;
 }
 
-/* Add an inner glow effect for a modern look */
+/* Inner glow effect */
 #custom-progress-bar::after {
     content: '';
     position: absolute;
@@ -50,12 +50,12 @@ body {
     right: 0;
     bottom: 0;
     background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 15px rgba(255, 165, 0, 0.5), 0 0 25px rgba(255, 0, 0, 0.4), 0 0 35px rgba(255, 255, 0, 0.3);
-    border-radius: 5px; /* Matches the bar's rounded edges */
-    pointer-events: none;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.5), 
+                0 0 25px rgba(255, 255, 0, 0.5);
+    border-radius: 5px; /* Matches bar's rounded edges */
 }
 
-/* Hide native progress indicators on some browsers */
+/* Hide native progress indicators */
 html {
     -webkit-progress-bar: none;
     progress[value]::-webkit-progress-value {
@@ -64,7 +64,7 @@ html {
     progress[value]::-webkit-progress-bar {
         background: none;
     }
-} 
+}
 
 h1,
 h2,
