@@ -18,8 +18,10 @@
     <script src="https://unpkg.com/feather-icons@4.28.0/dist/feather.min.js"></script>
   </head>
   <body>
+      <div class="header">
       <div class="progress-container">
-      <div class="progress-bar" id="progressBar"></div>
+      <div class="progress-bar" id="myBar"></div>
+      </div>
       </div>
     <section>
       <!-- MOBILE NAVIGATION -->
@@ -220,23 +222,14 @@
     </section>
     <script>
 
-      window.onscroll = function() {
-    scrollProgress();
-};
+      / When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
 
-function scrollProgress() {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-
-    // For laptops (side bar)
-    if (window.innerWidth > 768) {
-        document.getElementById("progressBar").style.height = scrolled + "%";
-    } 
-    // For mobile devices (top bar)
-    else {
-        document.getElementById("progressBar").style.width = scrolled + "%";
-    }
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
 }
       
       // Function to toggle mobile navigation
