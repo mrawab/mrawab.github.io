@@ -1,25 +1,28 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Select all elements you want to observe
-    const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, img, a, .content-container');
+const observer = new IntersectionObserver ((entries) => {
 
-    // Create IntersectionObserver instance
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);  // Optionally stop observing once element is visible
-        }
-      });
-    }, {
-      threshold: 0.1 // Adjust this threshold to control how much of the element must be visible
-    });
+entries.forEach((entry) => {
 
-    // Apply observer to each element
-    elementsToAnimate.forEach(element => {
-      element.classList.add('hidden');  // Start with elements hidden
-      observer.observe(element);  // Start observing the element
-    });
-  });
+console.log(entry)
+
+if (entry.isIntersecting) {
+
+entry.target.classList.add('show');
+
+} else {
+
+entry.target.classList.remove('show');
+
+
+
+}
+
+});
+
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+
+hidden Elements.forEach((el) => observer.observe(el));
 
 
       
