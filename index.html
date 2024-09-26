@@ -68,7 +68,7 @@
       </section>
 
       <!--CV CONTENT SECTION-->
-      <section class="w3-threequarter w3-padding-large w3-right">
+      <section class="parallax w3-threequarter w3-padding-large w3-right">
         <!--DESKTOP NAVIGATION-->
         <div class="w3-container w3-padding-large w3-border-bottom w3-hide-small">
           <a href="#home" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green">AWAB AZHARI</a>
@@ -89,7 +89,7 @@
           </div>
 
           <!--ABOUT SECTION-->
-          <div id="about" class="parallax w3-container w3-margin-top-20-percent w3-cursive w3-large">
+          <div id="about" class="w3-container w3-margin-top-20-percent w3-cursive w3-large">
             <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">ABOUT</h2>
             <p class="w3-margin-top-2"> 
               My Name Is Awab Azhari I Study Electronics Engineering At Future University Sudan, I'm Also Learning Python At Beginner Level
@@ -97,7 +97,7 @@
           </div>
 
           <!--RESUME-->
-          <div id="resume" class="parallax w3-container w3-margin-top-20-percent w3-cursive">
+          <div id="resume" class="w3-container w3-margin-top-20-percent w3-cursive">
             <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">RESUME</h2>
         
             <div class="w3-container w3-margin-top-2 w3-cursive">
@@ -221,6 +221,35 @@
       </section>      
     </section>
     <script>
+
+
+       
+  document.addEventListener('DOMContentLoaded', function () {
+    // Select all h, a, p, and body elements for animation
+    const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, a, p, body');
+
+    // Create IntersectionObserver instance
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible'); // Optionally remove class when scrolling back up
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    // Observe all selected elements
+    elementsToAnimate.forEach(item => {
+      item.classList.add('hidden');  // Initially hide the elements
+      observer.observe(item);
+    });
+  });
+
+
+      
 
       // When the user scrolls the page, execute myFunction
 window.onscroll = function() {myFunction()};
