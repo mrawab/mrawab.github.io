@@ -84,37 +84,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/
-
-/*text animations*/
-@keyframes textFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-body, h1, h2, h3, p, a {
-  animation: textFadeIn 1s ease-in-out forwards;
-  opacity: 0; /* Start invisible */
-}
-
-h1, h2, h3 {
-  animation-delay: 0.5s; /* Optional: Add delay for headers */
-}
-
-p {
-  animation-delay: 1s; /* Optional: Add delay for paragraphs */
-}
-
-a {
-  animation-delay: 1.5s; /* Optional: Add delay for links */
-}
-
 /* Custom Scrollbar for Webkit Browsers (Chrome, Safari, etc.) */
 ::-webkit-scrollbar {
   width: 12px;  /* Scrollbar width */
