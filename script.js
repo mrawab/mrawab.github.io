@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     lastScrollY = window.scrollY;
   }, {
-    threshold: 0.2
+    threshold: 0.3
   });
 
   // Observe all selected elements
