@@ -1,37 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, a, p, img, body');
-  let lastScrollY = window.scrollY;
+    // Select all h, a, p, and body elements for animation
+    const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, a, p, img, body');
 
-  // Create IntersectionObserver instance
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const currentScrollY = window.scrollY;
-      
-      if (entry.isIntersecting) {
-        if (currentScrollY < lastScrollY) {
-          // Scrolling up, move elements down
-          entry.target.style.transform = 'translateY(-30px)';
+    // Create IntersectionObserver instance
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
         } else {
-          // Scrolling down, move elements up (optional)
-          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.remove('visible'); // Optionally remove class when scrolling back up
         }
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible'); // Optionally remove class when not in view
-      }
+      });
+    }, {
+      threshold: 0.3
     });
 
-    lastScrollY = window.scrollY;
-  }, {
-    threshold: 0.2
+    // Observe all selected elements
+    elementsToAnimate.forEach(item => {
+      item.classList.add('hidden');  // Initially hide the elements
+      observer.observe(item);
+    });
   });
-
-  // Observe all selected elements
-  elementsToAnimate.forEach(item => {
-    item.classList.add('hidden');  // Initially hide the elements
-    observer.observe(item);
-  });
-});
       
 
       // When the user scrolls the page, execute myFunction
