@@ -29,32 +29,14 @@ body {
 
 /* General hidden state for elements */
 .hidden {
-
-   opacity: 0;
-
-   filter: blur(5px);
-
-   transform: translateX(-100%);
-
-   transition: all 1s;
-} 
-
-@media(prefers-reduced-motion) {
-
-hidden {
-
-transition: none;
-
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
- } 
 
 .visible {
-
-opacity: 1;
-filter : blur(0);
-
-transform: translateX(0);
-
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Body to enable smooth scroll */
