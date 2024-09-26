@@ -2,19 +2,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, a, p, img, body');
     let lastScrollY = window.scrollY;
 
-    // Create IntersectionObserver instance
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             const currentScrollY = window.scrollY;
 
             if (entry.isIntersecting) {
-                if (currentScrollY < lastScrollY) {
-                    // Scrolling up
-                    entry.target.classList.add('visible'); // Make visible
-                } else {
-                    // Scrolling down
-                    entry.target.classList.add('visible'); // Make visible
-                }
+                entry.target.classList.add('visible'); // Make visible
             } else {
                 entry.target.classList.remove('visible'); // Remove class when not in view
             }
@@ -25,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
         threshold: 0.2 // Adjust this based on your preference
     });
 
-    // Observe all selected elements
     elementsToAnimate.forEach(item => {
         item.classList.add('hidden'); // Initially hide the elements
         observer.observe(item); // Observe each element
