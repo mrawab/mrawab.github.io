@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Select all h, a, p, and body elements for animation
-    const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, a, p, body');
+    const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, a, p, img, body');
 
     // Create IntersectionObserver instance
     const observer = new IntersectionObserver((entries) => {
