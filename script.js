@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('show');
+          entry.target.classList.add('visible');
         } else {
-          entry.target.classList.remove('show'); // Optionally remove class when scrolling back up
+          entry.target.classList.remove('visible'); // Optionally remove class when scrolling back up
         }
       });
     }, {
@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
       observer.observe(item);
     });
   });
-
 
       
 
