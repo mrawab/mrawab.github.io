@@ -67,26 +67,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Parallax sections for background effect */
-.parallax1 {
-            background-image: url(
-"https://media.geeksforgeeks.org/wp-content/uploads/20240313115219/HTML-tutorial.jpg");
-            min-height: 500px;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-.parallax2 {
-            background-image: url(
-"https://media.geeksforgeeks.org/wp-content/uploads/20240313115240/CSS-Tutorial-(1).webp");
-            min-height: 500px;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+/
 
 /*text animations*/
 @keyframes textFadeIn {
