@@ -1,27 +1,36 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, a, p, img, body');
-    let lastScrollY = window.scrollY;
+  const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, a, p, img, body');
+  let lastScrollY = window.scrollY;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const currentScrollY = window.scrollY;
-
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible'); // Make visible
-            } else {
-                entry.target.classList.remove('visible'); // Remove class when not in view
-            }
-        });
-
-        lastScrollY = currentScrollY; // Update lastScrollY
-    }, {
-        threshold: 0.2 // Adjust this based on your preference
+  // Create IntersectionObserver instance
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const currentScrollY = window.scrollY;
+      
+      if (entry.isIntersecting) {
+        if (currentScrollY < lastScrollY) {
+          // Scrolling up, move elements down
+          entry.target.style.transform = 'translateY(-30px)';
+        } else {
+          // Scrolling down, move elements up (optional)
+          entry.target.style.transform = 'translateY(0)';
+        }
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible'); // Optionally remove class when not in view
+      }
     });
 
-    elementsToAnimate.forEach(item => {
-        item.classList.add('hidden'); // Initially hide the elements
-        observer.observe(item); // Observe each element
-    });
+    lastScrollY = window.scrollY;
+  }, {
+    threshold: 0.2
+  });
+
+  // Observe all selected elements
+  elementsToAnimate.forEach(item => {
+    item.classList.add('hidden');  // Initially hide the elements
+    observer.observe(item);
+  });
 });
       
 
