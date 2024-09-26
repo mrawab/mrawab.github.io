@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     }, {
-      threshold: 0.1
+      threshold: 0.2
     });
 
     // Observe all selected elements
