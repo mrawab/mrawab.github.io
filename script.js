@@ -1,30 +1,39 @@
-
 document.addEventListener('DOMContentLoaded', function () {
   const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, a, p, img, body');
   let lastScrollY = window.scrollY;
+
+  // Add initial CSS for smooth transition
+  elementsToAnimate.forEach(item => {
+    item.style.transition = 'transform 0.3s ease-out'; // Smooth transition
+  });
 
   // Create IntersectionObserver instance
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const currentScrollY = window.scrollY;
-      
+
       if (entry.isIntersecting) {
         if (currentScrollY < lastScrollY) {
           // Scrolling up, move elements down
           entry.target.style.transform = 'translateY(30px)';
         } else {
-          // Scrolling down, move elements up (optional)
-          entry.target.style.transform = 'translateY(0)';
+          // Scrolling down, move elements up
+          entry.target.style.transform = 'translateY(-30px)';
         }
         entry.target.classList.add('visible');
+        
+        // After a short delay, reset the translation to 0 so elements "line up"
+        setTimeout(() => {
+          entry.target.style.transform = 'translateY(0)';
+        }, 300); // Delay matches the CSS transition duration (0.3s)
       } else {
-        entry.target.classList.remove('visible'); // Optionally remove class when not in view
+        entry.target.classList.remove('visible');
       }
     });
 
     lastScrollY = window.scrollY;
   }, {
-    threshold: 0.3
+    threshold: 0.3  // Adjust this as per your preference
   });
 
   // Observe all selected elements
