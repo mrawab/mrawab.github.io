@@ -1,35 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, a, p, img, body');
-  let lastScrollY = window.scrollY;
+    const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, a, p, img, body');
+    let lastScrollY = window.scrollY;
 
-  // Create IntersectionObserver instance
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const currentScrollY = window.scrollY;
+    // Create IntersectionObserver instance
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const currentScrollY = window.scrollY;
 
-      if (entry.isIntersecting) {
-        if (currentScrollY < lastScrollY) {
-          // Scrolling up, keep elements in place
-          entry.target.classList.add('visible'); // Make visible
-        } else {
-          // Scrolling down, keep elements in place
-          entry.target.classList.add('visible'); // Make visible
-        }
-      } else {
-        entry.target.classList.remove('visible'); // Remove class when not in view
-      }
+            if (entry.isIntersecting) {
+                if (currentScrollY < lastScrollY) {
+                    // Scrolling up
+                    entry.target.classList.add('visible'); // Make visible
+                } else {
+                    // Scrolling down
+                    entry.target.classList.add('visible'); // Make visible
+                }
+            } else {
+                entry.target.classList.remove('visible'); // Remove class when not in view
+            }
+        });
+
+        lastScrollY = currentScrollY; // Update lastScrollY
+    }, {
+        threshold: 0.2 // Adjust this based on your preference
     });
 
-    lastScrollY = currentScrollY;
-  }, {
-    threshold: 0.2  // Adjust this based on your preference
-  });
-
-  // Observe all selected elements
-  elementsToAnimate.forEach(item => {
-    item.classList.add('hidden');  // Initially hide the elements
-    observer.observe(item);
-  });
+    // Observe all selected elements
+    elementsToAnimate.forEach(item => {
+        item.classList.add('hidden'); // Initially hide the elements
+        observer.observe(item); // Observe each element
+    });
 });
       
 
