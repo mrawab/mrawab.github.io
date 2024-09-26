@@ -2,60 +2,33 @@ document.addEventListener('DOMContentLoaded', function () {
   const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, a, p, img, body');
   let lastScrollY = window.scrollY;
 
-  // Add initial CSS for smooth transition
-  elementsToAnimate.forEach(item => {
-    item.style.transition = 'transform 0.3s ease-out'; // Smooth transition
-    item.style.willChange = 'transform'; // Hint to the browser to optimize for this property
-  });
-
-  // Throttle the scroll event handler for better performance
-  let isScrolling = false;
-
   // Create IntersectionObserver instance
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+      const currentScrollY = window.scrollY;
+
       if (entry.isIntersecting) {
-        // Scroll direction tracking
-        const currentScrollY = window.scrollY;
-        const scrollDirection = currentScrollY < lastScrollY ? 'up' : 'down';
-
-        // Apply the right animation based on scroll direction
-        if (scrollDirection === 'up') {
-          entry.target.style.transform = 'translateY(20px)'; // Move down on scroll up
+        if (currentScrollY < lastScrollY) {
+          // Scrolling up, keep elements in place
+          entry.target.classList.add('visible'); // Make visible
         } else {
-          entry.target.style.transform = 'translateY(-20px)'; // Move up on scroll down
+          // Scrolling down, keep elements in place
+          entry.target.classList.add('visible'); // Make visible
         }
-
-        entry.target.classList.add('visible');
-        lastScrollY = currentScrollY;
-
-        // Optimize: Reset the transform after the animation finishes (wait for transition duration)
-        setTimeout(() => {
-          entry.target.style.transform = 'translateY(0)';
-        }, 300); // Transition time match
-
       } else {
-        entry.target.classList.remove('visible');
+        entry.target.classList.remove('visible'); // Remove class when not in view
       }
     });
+
+    lastScrollY = currentScrollY;
   }, {
-    threshold: 0.3  // Adjust threshold based on your need
+    threshold: 0.2  // Adjust this based on your preference
   });
 
   // Observe all selected elements
   elementsToAnimate.forEach(item => {
     item.classList.add('hidden');  // Initially hide the elements
     observer.observe(item);
-  });
-
-  // Throttle or debounce scrolling for better performance
-  window.addEventListener('scroll', () => {
-    if (!isScrolling) {
-      window.requestAnimationFrame(() => {
-        isScrolling = false;
-      });
-    }
-    isScrolling = true;
   });
 });
       
