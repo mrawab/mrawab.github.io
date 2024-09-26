@@ -1,24 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Select all h, a, p, and body elements for animation
-    const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, a, p, body');
+    // Select all elements you want to observe
+    const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, img, a, .content-container');
 
     // Create IntersectionObserver instance
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-        } else {
-          entry.target.classList.remove('visible'); // Optionally remove class when scrolling back up
+          observer.unobserve(entry.target);  // Optionally stop observing once element is visible
         }
       });
     }, {
-      threshold: 0.1
+      threshold: 0.1 // Adjust this threshold to control how much of the element must be visible
     });
 
-    // Observe all selected elements
-    elementsToAnimate.forEach(item => {
-      item.classList.add('hidden');  // Initially hide the elements
-      observer.observe(item);
+    // Apply observer to each element
+    elementsToAnimate.forEach(element => {
+      element.classList.add('hidden');  // Start with elements hidden
+      observer.observe(element);  // Start observing the element
     });
   });
 
