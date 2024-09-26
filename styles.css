@@ -26,47 +26,6 @@ body {
   color: #fff;
 }
 
-
-/* General Parallax Section Style */
-.parallax-section {
-  position: relative;
-  height: 100vh;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 3rem;
-  text-align: center;
-  animation: fadingIn 2s ease-out;
-}
-
-/* Different Background Images */
-.parallax-1 {
-  background-image: url('parallax1.jpg'); /* Replace with your image */
-}
-
-.parallax-2 {
-  background-image: url('parallax2.jpg'); /* Replace with another image */
-}
-
-/* Regular Content Section */
-.content-section {
-  padding: 50px;
-  background-color: #f4f4f4;
-}
-
-/* Simple fade-in animation */
-@keyframes fadingIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-
-
-
 /* General hidden state for elements */
 .hidden {
   opacity: 0;
