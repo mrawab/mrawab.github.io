@@ -29,7 +29,7 @@ body {
 /* Parallax background section */
 .parallax {
   /* The image used */
-  background-image: url('your-image-url.jpg'); /* Add your background image URL */
+  background-image: url('parallax.jpg'); /* Add your background image URL */
 
   /* Set a specific height */
   min-height: 500px;
