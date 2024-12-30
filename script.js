@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Select all h, a, p, and body elements for animation
-    const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, a, p, img, body');
+    const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, a, p, img');
 
     // Create IntersectionObserver instance
     const observer = new IntersectionObserver((entries) => {
@@ -21,43 +21,59 @@ document.addEventListener('DOMContentLoaded', function () {
       observer.observe(item);
     });
   });
-      
 
-      // When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
 
-function myFunction() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  document.getElementById("myBar").style.width = scrolled + "%";
+
+// dark - light mode
+const modeToggleMobile = document.getElementById('mobile-mode-toggle');
+const modeIconMobile = document.getElementById('mobile-mode-icon');
+const modeToggleDesktop = document.getElementById('desktop-mode-toggle');
+const modeIconDesktop = document.getElementById('desktop-mode-icon');
+const avatarImage = document.getElementById('avatar-image');
+let isDarkMode = false;
+
+function toggleMode() {
+  isDarkMode = !isDarkMode;
+  if (isDarkMode) {
+    document.body.classList.add('dark-mode');
+    modeIconMobile.src = 'dark-mode.svg';
+    modeIconDesktop.src = 'dark-mode.svg';
+    avatarImage.src = 'main-dark.jpg'; // Change to dark mode avatar
+  } else {
+    document.body.classList.remove('dark-mode');
+    modeIconMobile.src = 'light-mode.svg';
+    modeIconDesktop.src = 'light-mode.svg';
+    avatarImage.src = 'main.png'; // Change to light mode avatar
+  }
 }
-      
-      // Function to toggle mobile navigation
-      const modeToggle = document.getElementById('mode-toggle');
-  const modeIcon = document.getElementById('mode-icon');
-  const avatarImage = document.getElementById('avatar-image');
 
-  let isDarkMode = false;
+// Add event listeners to the buttons themselves
+modeToggleMobile.addEventListener('click', toggleMode);
+modeIconMobile.addEventListener('click', (e) => {
+  e.stopPropagation(); // Prevents event propagation to the parent button
+  toggleMode();
+});
 
-  modeToggle.addEventListener('click', () => {
-    isDarkMode = !isDarkMode;
-    
-    if (isDarkMode) {
-      document.body.classList.add('dark-mode');
-      modeIcon.src = 'dark-mode.svg';
-      avatarImage.src = 'main-dark.jpg';  // Change to dark mode avatar
-    } else {
-      document.body.classList.remove('dark-mode');
-      modeIcon.src = 'light-mode.svg';
-      avatarImage.src = 'main.png'; // Change to light mode avatar
-    }
-  });
-      function toggleNavigation() {
-        let nav = document.getElementById("mobile-nav");
-        if (nav.classList.contains('w3-show')) {
-          nav.classList.remove('w3-show');
-        } else { 
-          nav.classList.add('w3-show');
-        }
-      }
+modeToggleDesktop.addEventListener('click', toggleMode);
+modeIconDesktop.addEventListener('click', (e) => {
+  e.stopPropagation(); // Prevents event propagation to the parent button
+  toggleMode();
+});
+
+
+// Add event listeners to both mobile and desktop buttons
+modeToggleMobile.addEventListener('click', toggleMode);
+modeToggleDesktop.addEventListener('click', toggleMode);
+
+
+
+//Toggle Navigation
+function toggleNavigation() {
+  let nav = document.getElementById("mobile-nav");
+  
+  if (nav.classList.contains('w3-show')) {
+    nav.classList.remove('w3-show');
+  } else { 
+    nav.classList.add('w3-show');
+  }
+}
