@@ -1,0 +1,310 @@
+/* MAIN CODE */
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+
+*{
+  font-family: "Jersey 15", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    font-size: 15px;
+    margin:0;
+    padding:0;
+    font-family: monospace, sans-serif;
+    background-color:#28282B ;
+    height :100px;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent; /* Disable blue highlight on mobile */
+}
+
+a:focus, a:active {
+  outline: none;
+  box-shadow: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+.transition{
+  transition: transform 0.3s;
+}
+.transition-header{
+  transition: transform 0.3s;
+} 
+
+/* header*/
+.header{
+  justify-content:space-between;
+  align-items: center;
+  display: flex;
+  background-color: #1B1212 ;
+  padding:10px;
+  animation : border-scale 1s linear alternate ;
+  border-radius : 0px 0px 20px 20px;
+}
+.header a{
+  color:white;
+  text-decoration: none;
+  margin:5px;
+  padding :3px;
+  font-size :20px;
+}
+.header a:hover{
+  transform: scale(1.1);
+  border-radius: 10px;
+}
+.header a:active{
+  transform: scale(1.1);
+}
+.header span{
+  font-size: 30px;
+} 
+/* MAIN PAGE */
+
+.landing-page{
+  position:relative;
+  align-items:center;
+  width:100%;
+  height: 100vh;
+  display:flex;
+  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0);
+  flex-direction: column; 
+}
+.landing-page span{
+  align-items :center;
+  justify-content:center;
+  display:flex;
+  margin: 40px;
+  display: inline-block;
+  color: white;
+  font-size: 40px;
+  /*animation: web-text 0.8s linear infinite alternate;
+   animation: <animation-name> <duration> <timing-function> <delay> <iteration-count> <direction> <fill-mode> <play-state>;*/
+}
+.landing-page span:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
+}
+.landing-page img{
+  border-radius : 20px;
+  width:300px;
+  margin-bottom:35px;
+  animation : image-scale 0.3s linear alternate ;
+}
+.landing-page img:hover{
+  transform:scale(1.1);
+  transition: 0.5s;
+}
+@keyframes image-scale{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);}
+}
+@keyframes border-scale{
+  0%{border-radius : 0px 0px 30px 30px;}
+  50%{border-radius : 0px 0px 0px 0px;}
+  100%{border-radius : 0px 0px 20px 20px;}
+}
+
+.social-links{
+  display:flex;
+  justify-content:space-evenly;
+  align-items: center;
+}
+.social-links i{
+  color:white;
+  margin:0px -5px;
+  justify-content:space-between;
+  bottom:16px;
+  font-size: 22px;
+  animation : image-scale 1s linear alternate ;
+}
+.social-links i:hover{
+  transform:scale(1.5);
+}
+
+#twitter:hover{
+  color:#1DA1F2;
+}
+#github:hover{
+  color:#000000;
+}
+#instagram:hover{
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+          /* Also define standard property for compatibility */
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+   /* change this to change the size*/
+}
+#facebook:hover{
+  color:#1877F2;
+}
+
+/* CONTACT PAGE */
+.contat-body{
+  justify-content:center;
+  align-items:center;
+  display: flex;
+  flex-direction:column;
+  min-height: 100vh;
+}
+.form{
+  backdrop-filter: blur(60px);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius:25px 15px 25px 15px;
+  width:330px;
+  height:250px;
+  animation :image-scale 0.3s linear alternate ;
+}
+.form h1{
+  color:white;
+  padding:0px;
+  margin: 10px;
+  font-size: 40px;
+  text-align: center;
+  transition:transform 0.5s;
+}
+.form h1:hover{
+  transform:scale(1.1);
+}
+.input-box{
+  width:100%;
+  height:20px;
+  margin:6px;
+  padding:10px;
+  position:relative;
+}
+.input-box input{
+  border:none;
+  border:2px solid rgba(255, 255, 255, 0.1);
+  width:75%;
+  align-items:center;
+  display: flex;
+  margin-left: 18px;
+  padding:5px;
+  outline: none;
+  height:100%;
+  background:transparent;
+  border-radius:10px;
+  color:white;
+  transition: transform 0.5s;
+}
+.input-box input:hover{
+  transform:scale(1.2);
+}
+.input-box input:active{
+  transform:scale(1.2);
+}
+.input-box input:focus{
+  transform:scale(1.2);
+}
+.input-box i{
+  position:absolute;
+  right:42px;
+  top:65%;
+  transform:translateY(-50%);
+  color:white !important;
+}
+.input-box input::placeholder{
+  color:white;
+  font-size: 18px;
+}
+.form-buttons{
+  justify-content:space-between;
+  align-items:center;
+  display:flex;
+}
+.form-buttons button, a{
+  border: none;
+  border-radius:10px;
+  margin:10px 35px;
+  font-size: 20px;
+  outline:none;
+  color:white;
+  padding:5px;
+  transition: transform 0.5s;
+  background:transparent;
+}
+.form-buttons button:hover,.form a:hover{
+  transform:scale(1.2);
+  background-color:#343434;
+
+}
+
+/* RESIZING */
+/* mobile */
+@media(max-width: 600px){ 
+  
+}
+/* tablets*/
+@media(min-width: 601px) and (max-width: 768px) { 
+  
+}
+/* laptops*/
+@media(min-width: 769px) and (max-width: 1024px){ 
+
+ .header a{
+    font-size: 60px;
+ }
+.header span{
+  font-size: 80px;
+}
+
+.landing-page span{
+  font-size:120px;
+}
+.landing-page img{
+  width:850px;
+}
+.landing-page i{
+  font-size: 100px;
+  margin:25px;
+}
+.form{
+  width:800px;
+  height:700px;
+}
+.form h1{
+  font-size: 100px;
+}
+.input-box{
+  padding:50px;
+  margin:60;
+}
+.input-box input{
+  padding:40px;
+  margin-left:23px;
+  width:70%;
+}
+.input-box i{
+  font-size:30px;
+  right:140px;
+  top:80%;
+}
+.input-box input::placeholder{
+  font-size:60px;
+}
+.form-buttons button,.form a{
+  font-size:80px;
+  margin:60px 85px;
+  border-radius:20px;
+}
+}
+/* desktop */
+@media(min-width: 1025px){ 
+ 
+ 
+}
