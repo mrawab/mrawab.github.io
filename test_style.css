@@ -5,15 +5,18 @@
   font-family: "Jersey 15", serif;
   font-weight: 400;
   font-style: normal;
+  margin:0;
+  padding:0; 
 }
 
 body {
     font-size: 15px;
-    margin:0;
-    padding:0;
     font-family: monospace, sans-serif;
-    background-color:#28282B ;
-    height :100px;
+    background-color:white ;
+    background-image:url('wallpapersden.com_starry-sky-hd-dark-blue-night_2912x1632.jpg');
+    min-height: 100vh;
+    height: 100%;
+    width:100%;
     background-position: center;
     background-size:cover;
     background-repeat: no-repeat;
@@ -21,11 +24,13 @@ body {
     
 }
 
-a {
+a, span{
   outline: none;
   text-decoration: none;
   box-shadow: none;
-  -webkit-tap-highlight-color: transparent; /* Disable blue highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  /* Disable blue highlight on mobile */
 }
 
 a:focus, a:active {
@@ -74,12 +79,13 @@ a:hover {
 
 .landing-page{
   position:relative;
+  color: #ffffff;
   align-items:center;
   width:100%;
-  height: 100vh;
+  height: 100%;
   display:flex;
-  backdrop-filter: blur(2px);
-  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(3px);
+  /* background: rgba(255, 255, 255, 0); */
   flex-direction: column; 
 }
 .landing-page span{
@@ -87,7 +93,6 @@ a:hover {
   justify-content:center;
   display:flex;
   margin: 40px;
-  display: inline-block;
   color: white;
   font-size: 40px;
   /*animation: web-text 0.8s linear infinite alternate;
@@ -95,10 +100,10 @@ a:hover {
 }
 .landing-page span:hover {
   transform: scale(1.2);
-  transition: 0.5s;
+  
 }
 .landing-page img{
-  border-radius : 20px;
+  border-radius : 40px;
   width:300px;
   margin-bottom:35px;
   animation : image-scale 0.3s linear alternate ;
@@ -122,6 +127,7 @@ a:hover {
   display:flex;
   justify-content:space-evenly;
   align-items: center;
+  margin-bottom: 30px;
 }
 .social-links i{
   color:white;
@@ -129,10 +135,28 @@ a:hover {
   justify-content:space-between;
   bottom:16px;
   font-size: 22px;
+  position:relative;
   animation : image-scale 1s linear alternate ;
 }
+/* @property --fill{
+  syntax:'<percentage>';
+  inherits: true;
+  initial-value:0%;
+} 
+.social-links i::after{
+  content: "";
+  z-index: -1;
+  position:absolute;
+  inset: -3px;
+  border-radius: 15px;
+  background: conic-gradient(
+red var(--fill), transparent var(--fill));
+transition: --fill 0.1s ease-in-out;
+} */
 .social-links i:hover{
   transform:scale(1.5);
+  /* color:yellow;
+  --fill:100%; */
 }
 
 #twitter:hover{
@@ -153,26 +177,86 @@ a:hover {
   color:#1877F2;
 }
 
+/* PROJECTS under landing-page div */
+
+.projects span{
+  align-items :center;
+  justify-content:center;
+  display:flex;
+  font-size: 40px;
+}
+
+.show-case {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 30px 0px;
+}
+
+.show-case img {
+  width: 80%;
+  transition: transform 0.5s ease-in-out;
+}
+.show-case img:hover {
+  transform: rotateY(180deg);
+  filter: blur(2px);
+} 
+
+/* DIFFERENT PROJECTS */
+.card-one {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  font-size: 25px;
+}
+.project-one {
+  position: absolute;
+  top: 40%;
+  visibility: hidden;
+  font-size: 40px;
+}
+.card-two {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  font-size: 25px;
+}
+
+.project-two {
+  position: absolute;
+  top: 40%;
+  visibility: hidden;
+  font-size: 40px;
+}
+
+
+
 /* CONTACT PAGE */
 .contat-body{
   justify-content:center;
   align-items:center;
   display: flex;
+  height:100%;
   flex-direction:column;
   min-height: 100vh;
 }
 .form{
-  backdrop-filter: blur(60px);
-  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
   border-radius:25px 15px 25px 15px;
   width:330px;
-  height:250px;
+  height:100%;
+  justify-content:center;
+  align-items:center;
   animation :image-scale 0.3s linear alternate ;
 }
 .form h1{
   color:white;
-  padding:0px;
-  margin: 10px;
+  padding-top:10px;
   font-size: 40px;
   text-align: center;
   transition:transform 0.5s;
@@ -187,7 +271,7 @@ a:hover {
   padding:10px;
   position:relative;
 }
-.input-box input{
+.input-box input, textarea{
   border:none;
   border:2px solid rgba(255, 255, 255, 0.1);
   width:75%;
@@ -202,13 +286,17 @@ a:hover {
   color:white;
   transition: transform 0.5s;
 }
-.input-box input:hover{
+.input-box textarea{
+  padding-bottom:30px;
+}
+
+.input-box input:hover,.input-box textarea:hover{
   transform:scale(1.2);
 }
-.input-box input:active{
+.input-box input:active,.input-box textarea:active{
   transform:scale(1.2);
 }
-.input-box input:focus{
+.input-box input:focus,.input-box textarea:focus{
   transform:scale(1.2);
 }
 .input-box i{
@@ -218,7 +306,10 @@ a:hover {
   transform:translateY(-50%);
   color:white !important;
 }
-.input-box input::placeholder{
+#textbox i{
+  top:100%;
+}
+.input-box input::placeholder,.input-box textarea::placeholder{
   color:white;
   font-size: 18px;
 }
@@ -226,6 +317,7 @@ a:hover {
   justify-content:space-between;
   align-items:center;
   display:flex;
+  margin:30px 0px;
 }
 .form-buttons button, a{
   border: none;
