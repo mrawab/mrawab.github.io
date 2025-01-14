@@ -4,38 +4,60 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Awab Azhari</title>
-  
-  <!-- HTML -->
-  
-
   <!-- Custom Styles -->
   <link rel="stylesheet" href="test_style.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+</head>
+
 <body>
-  
-  <div class="header">
-    <a class="transition-header" href="test.html" title="Awab"><span>Awab Azhari</span></a>
+  <header>
     <div class="header">
-      <a class="transition-header" href="test.html">Home</a>
-      <a class="transition-header" href="#coming_soon">About</a>
-      <a class="transition-header" href="test_contact.html">Contact</a>
+      <a class="transition-header" href="test.html" title="Awab"><span>Awab Azhari</span></a>
+      <div class="header">
+        <a class="transition-header" href="test.html">Home</a>
+        <a class="transition-header" href="about.html">About</a>
+        <a class="transition-header" href="test_contact.html">Contact</a>
+      </div>
     </div>
-  </div>
+  </header>
+
   <div class="landing-page">
     <span class="transition"><b>WEB DEVELOPER</b></span>
-    <img class="transition" src="header.jpg" alt="A photo">
-  
-  <div class="social-links">
-    <a href="https://www.linkedin.com/in/awab-azhari-98879930b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
-    id="twitter" class="fa-brands fa-linkedin transition"></i></a>
-    <a href="https://github.com/mrawab "><i id="github" class="fa-brands fa-github transition"></i></a>
-    <a href="https://www.instagram.com/mr_awab_01" ><i class="fa fa-instagram transition" id="instagram" aria-hidden="true"></i></a>
-    <a href="https://www.facebook.com/awabazharii?mibextid=ZbWKwL"><i id="facebook" class="fa-brands fa-facebook transition"></i></a>
+    <img class="profile transition" src="profile.jpg" alt="profile photo" height="60%">
+    
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/awab-azhari-98879930b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+        <i id="twitter" class="fa-brands fa-linkedin transition"></i>
+      </a>
+      <a href="https://github.com/mrawab">
+        <i id="github" class="fa-brands fa-github transition"></i>
+      </a>
+      <a href="https://www.instagram.com/mr_awab_01">
+        <i class="fa fa-instagram transition" id="instagram" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.facebook.com/awabazharii?mibextid=ZbWKwL">
+        <i id="facebook" class="fa-brands fa-facebook transition"></i>
+      </a>
+    </div>
+    
+    <section class="projects">
+      <span class="transition">projects</span>
+      <hr>
+      <div class="show-case">
+        <div class="card-one">
+          <img onmouseover="display_project_website()" onmouseout="hide_project_website()" src="website.png">
+          <h1 class="project-one">PORTFILO WEBSITE</h1>
+        </div>
+        <div class="card-two">
+          <img onmouseover="display_project_telegram_bot()" onmouseout="hide_project_telegram_bot()" src="telegram_bot.png">
+          <h1 class="project-two">TELEGRAM BOT</h1>
+        </div>
+      </div>
+    </section>
   </div>
-  </div>
-  <script src="main.js"></script>
+
+  <script src="main.js" defer></script>
 </body>
 </html>
