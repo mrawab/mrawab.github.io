@@ -25,3 +25,19 @@ function hide_project_telegram_bot() {
   hover.style.transform='scale(1)';
   hover.style.visibility='hidden';
 }
+
+//nav bar
+function hide_nav_bar() {
+  const mobileHeader = document.getElementById("mobile-header");
+  const overlay = document.getElementById("overlay");
+ // mobileHeader.style.display = "none"; 
+  mobileHeader.classList.remove("show");
+  overlay.style.display = "none";
+}
+function show_nav_bar() {
+  const mobileHeader = document.getElementById("mobile-header");
+  const overlay = document.getElementById("overlay");
+  //mobileHeader.style.display = "flex";
+  mobileHeader.classList.add("show");
+  overlay.style.display = "block";
+}
