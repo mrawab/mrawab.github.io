@@ -58,6 +58,19 @@ a:hover {
   50%{border-radius : 0px 0px 0px 0px;}
   100%{border-radius : 0px 0px 20px 20px;}
 }
+@keyframes typing {
+  from{
+    width:0;
+  }
+  to{
+    width:14ch;
+  }
+}
+@keyframes blinking {
+  50%{
+    border-right: transparent;
+  }
+}
 @keyframes appear {
   from{
     opacity: 0;
@@ -123,9 +136,8 @@ nav button svg{
   height: 100%;
   top: 0;
   right: -100%;
-  /*background: #1B1212;*/
-  backdrop-filter: blur(5px);
-  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
   transition: right 0.4s ease-in-out;
 }
 .mobile-header.show{
@@ -143,7 +155,7 @@ nav button svg{
   transition: all 0.5s;
 }
 #overlay{
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
   inset: 0;
   z-index: 9;
@@ -167,17 +179,21 @@ nav button svg{
   flex-direction: column; 
 }
 .landing-page span{
-  align-items :center;
-  justify-content:center;
-  display:flex;
   margin: 40px;
+  overflow: hidden;
+  white-space: nowrap;
   color: white;
+  width:0;
+  border-right: 2px solid white;
   font-size: 40px;
+  animation: typing 1s ease-in forwards, blinking 1s infinite;
   /*animation: web-text 0.8s linear infinite alternate;
    animation: <animation-name> <duration> <timing-function> <delay> <iteration-count> <direction> <fill-mode> <play-state>;*/
 }
-.landing-page span:hover {
-  transform: scale(1.2);
+
+.landing-page span:hover{
+  color:tomato;
+  border-color: tomato;
 }
 .landing-page img{
   border-radius : 40px;
@@ -256,6 +272,9 @@ transition: --fill 0.1s ease-in-out;
 }
 .projects span{
   padding: 20px;
+  animation: appear ease-in-out;
+  animation-timeline: view();
+  animation-range: entry 20% , cover 40%;
 }
 .projects span:hover {
   transform: scale(1.2);
@@ -301,6 +320,11 @@ transition: --fill 0.1s ease-in-out;
   position: absolute;
   top: 40%;
   visibility: hidden;
+  font-size: 40px;
+}
+.show-case a{
+  position: absolute;
+  bottom: 130px;
   font-size: 40px;
 }
 .card-two {
