@@ -1,45 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>submitted</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submitted</title>
 
     <style>
-        body{
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            background-color: #1B1212;
-            color: aliceblue;
-            animation: appear 0.5s ease-in;
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        background-image: url("wallpapersden.com_starry-sky-hd-dark-blue-night_2912x1632.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: aliceblue;
+        animation: appear 0.5s ease-in;
+      }
+      body a,
+      p {
+        color: aliceblue;
+        font-size: 20px;
+        transition: all 0.5s ease;
+      }
+      body a:hover{
+        background:linear-gradient(to right,rgb(236, 240, 3),rgb(14, 243, 7));
+        background-clip: text;
+        color: transparent;
+        transform: scale(2);
+      }
+      div{
+        background-color: rgba(255,255,255,0.05);
+        backdrop-filter: blur(5px);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        width: 400px;
+        padding: 20px;
+        border-radius: 25px;
+        animation: border-effect 5s ease-in-out;
+      }
+      h1 {
+        position: relative;
+      }
+      @keyframes appear {
+        from {
+          opacity: 0;
         }
-        body a,p{
-            color: aliceblue;
-            font-size: 20px;
-            font-style: italic;
+        to {
+          opacity: 1;
         }
-        body a:hover{
-            color:aquamarine;
-            text-decoration: underline;
-            transform: translateY(-20%);
+      }  
+        @keyframes border-effect {
+        0% {
+          border-radius: 0px;
         }
-        @keyframes appear {
-            from{
-                opacity: 0;
-            }
-            to{
-                opacity: 1;
-            }
+        20% {
+            border-radius: 25px;
         }
+        40% {
+            border-radius: 10px;
+        }
+        60% {
+            border-radius: 30px;
+        }
+        80% {
+            border-radius: 5px;
+        }
+        100% {
+            border-radius: 25px;
+        }
+
+      }
     </style>
-</head>
-<body>
-    <h1><b>Submitted!</b></h1>
-    <p>Would you like to go <a href="main.html">home</a>?</p>
-</body>
+  </head>
+  <body>
+    <div>
+        <h1><b>submitted successfully</b></h1>
+        <p>Would like to go <a href="main.html">home</a>?</p>
+    </div>
+  </body>
 </html>
