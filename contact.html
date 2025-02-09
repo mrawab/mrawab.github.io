@@ -47,10 +47,11 @@
       </form>
     </div>
   </main>
-  <script defer>
+  <script defer> document.querySelector("form").addEventListener("submit", function () {
     let username = document.getElementById("username").value;
-document.getElementById("message").value = `message from ${username}`;
-  </script>
+    document.getElementById("message").value = `Message from ${username}`;
+  });
+</script>
 </body>
 
 </html>
