@@ -13,7 +13,7 @@ body {
   font-size: 15px;
   font-family: monospace, sans-serif;
   background-color: white;
-  background-image: url("main-background.webp");
+  background-image: url("wallpapersden.com_starry-sky-hd-dark-blue-night_2912x1632.jpg");
   height: 100%;
   background-position: center;
   background-size: cover;
@@ -98,11 +98,15 @@ a:hover {
   animation-range: entry 0%, cover 40%;
 }
 /* header*/
+header{
+  margin-bottom: 50px;
+}
 .desktop-header {
   justify-content: space-between;
   align-items: center;
   display: flex;
   width: 100%;
+  position: fixed;
   top: 0;
   z-index: 9;
   background-color: rgba(0, 0, 0, 0.5);
@@ -223,7 +227,6 @@ a:hover {
   font-size: 18px;
   position: relative;
 }
-
 #overlay {
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
@@ -257,8 +260,9 @@ a:hover {
 }*/
 /* MAIN PAGE */
 
-/* FOOTER*/
-footer {
+/* FOOTER */
+footer{
+  margin-top: 50px;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -268,7 +272,7 @@ footer {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+
 }
 footer h3 {
   text-align: center;
@@ -287,6 +291,8 @@ footer a:hover {
   transform: scale(1);
   color: #fd5949;
 }
+
+/* LANDING PAGE */
 .landing-page {
   position: relative;
   color: #ffffff;
