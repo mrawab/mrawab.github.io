@@ -367,7 +367,7 @@ transition: --fill 0.1s ease-in-out;
   color: #1da1f2;
 }
 #github:hover {
-  color: black;
+  color: #000000;
 }
 #instagram:hover {
   background: radial-gradient(
