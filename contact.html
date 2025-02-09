@@ -20,7 +20,7 @@
 
 <input type="hidden" name="redirect" value="https://awabazhari.netlify.app/submit.html">
 
-<input type="hidden" name="subject" value="message from your website">
+<input id = "message" type="hidden" name="subject">
         <h1>Enter Info</h1>
 
 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
@@ -47,6 +47,10 @@
       </form>
     </div>
   </main>
+  <script defer>
+    let username = document.getElementById("username").value;
+document.getElementById("message").value = `message from ${username}`;
+  </script>
 </body>
 
 </html>
