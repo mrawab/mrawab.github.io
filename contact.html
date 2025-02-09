@@ -15,7 +15,7 @@
 <body class="contat-body">
   <main>
     <div class="form">
-      <form action="https://api.web3forms.com/submit" method="POST">
+      <form id="form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="cb7aaa96-b5ca-4e17-a172-030a1636757d">
 
 <input type="hidden" name="redirect" value="https://awabazhari.netlify.app/submit.html">
@@ -48,8 +48,7 @@
     </div>
   </main>
   <script defer>
-
-document.querySelector("form").addEventListener("submit", function () {
+document.getElementById("form").addEventListener("submit",() {
     let username = document.getElementById("username").value;
     document.getElementById("message").value = `Message from ${username}`;
   });
