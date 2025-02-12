@@ -15,27 +15,27 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
       rel="stylesheet"
     />
+  
   </head>
-
   <body>
     <header>
       <!-- MOBILE NAV -->
       <nav id="mobile-header" class="mobile-header hide-on-desktop">
         <ul class="main-title">
           <li>
-            <a href="main.html"
+            <a href="index.html"
               ><span title="Awab Azhari Home">Awab Azhari</span></a
             >
           </li>
           <li>
             <button title="close menu" onclick="hide_nav_bar()">
-              <i style="font-size: 20px;"class="fa-solid fa-xmark"></i>
+              <i style="font-size: 20px" class="fa-solid fa-xmark"></i>
             </button>
           </li>
         </ul>
         <ul class="main-nav">
           <li id="about-icon">
-            <a href="about.html" title="about me">About Me</a
+            <a href="index.html" title="about me">About Me</a
             ><i class="fa-solid fa-circle-info"></i>
           </li>
           <li id="home-icon" class="active">
@@ -75,7 +75,7 @@
       <nav>
         <ul class="desktop-header">
           <li class="transition-header">
-            <a href="main.html" title="Awab Azhari home"
+            <a href="index.html" title="Awab Azhari home"
               ><span>Awab Azhari</span></a
             >
           </li>
@@ -91,15 +91,17 @@
           </li>
           <li class="transition-header hide-on-desktop">
             <button title="show menu" onclick="show_nav_bar()">
-              <i style="font-size: 20px;" class="fa-solid fa-bars"></i>
+              <i style="font-size: 18px" class="fa-solid fa-bars"></i>
             </button>
           </li>
         </ul>
       </nav>
     </header>
+
     <div class="hide-on-desktop" onclick="hide_nav_bar()" id="overlay"></div>
-    <div class="landing-page">
-      <span class="transition" id="main-header" title="web dev"
+    <!--landing page-->
+    <main id="landing-page" class="landing-page">
+      <span class="transition" id="main-header" title="web developer"
         ><b>WEB DEVELOPER</b></span
       >
       <img
@@ -107,93 +109,79 @@
         class="profile transition"
         title="profile photo"
         src="profile-photo.webp"
-        alt="profile photo"
+        alt="profile photo
         height="60%"
       />
-    </div>
-
-    <!-- PHONE\TABLET
-    <section class="projects">
-      <span class="transition">projects</span>
-      <hr/>
-      <div class="show-case">
-        <div class="card-one">
-          <img
-            class="appear"
-            onmouseover="display_project_website()"
-            onmouseout="hide_project_website()"
-            src="website.png"
-            alt="Website Project"
-          />
-          <h1 id="project-one">PORTFILO WEBSITE</h1>
-        </div>
-        <div class="card-two">
-          <img class="appear" onmouseover="display_project_telegram_bot()"
-          onmouseout="hide_project_telegram_bot()" src="telegram_bot.png"
-          alt=Telegram Project" >
-          <h1 id="project-two">TELEGRAM BOT</h1>
+    </main>
+ 
+    <section class="aboutme">
+      <center><h1>ABOUT ME</h1></center>
+      <div class="aboutmetext">
+        <code class="code">
+          <pre style="font-size: 20px; background-color: tomato; width: max-content;">PYTHON IDE:</pre>
+          about:<mark>dict</mark> = {"ME":
+          {"FIRSTNAME":"Awab","LASTNAME":"Azhari","AGE":"20","COUNTRY":"Sudan"},
+          "SKILLS":
+          {"PYTHON:"INTERMEDIATE","HTML:"BEGINNER","CSS:"BEGINNER","JAVASCRIPT:"BEGINNER"}
+        }
+        <pre></pre>
+          <mark>print</mark>(f"""Hey there you are at my Portfolio my name is {about["ME"]["FIRSTNAME"] about["ME"]["LASTNAME"]}
+          i`m {about["ME"]["AGE"]} old from {about["ME"]["COUNTRY"]}
+          my skills are Python at {about["SKILLS"]["PYTHON"]} level,
+          HTML at {about["SKILLS"]["HTML"]} level,
+          CSS at {about["SKILLS"]["CSS"]} level,
+          JAVASCRIPT {about["SKILLS"]["JAVASCRIPT"]} level""")
+        </code>
+        
+      </div>
+      <div class="run"><button onclick="showInfo()">Run Code</button></div>
+      <div id="coolinfo" class="coolinfo">
+        <h2 class="appear-right" style="animation-delay:0s;">My Name Is Awab Azhari</h2>
+        <h2 class="appear-left" style="animation-delay:0;">I`m 20 years old</h2>
+        <h2 class="appear-right" style="animation-delay:0s;">From Sudan</h2>
+        <center><span><mark>Skilled At:</mark></sp></center>
+        <div class="skills">
+          <h2>PYTHON</h2>
+          <i class="fa-brands fa-python"></i>
+          <h2>HTML5</h2>
+          <i class="fa-brands fa-html5"></i>
+          <h2>CSS</h2>
+          <i class="fa-brands fa-css3"></i>
+          <h2>JAVASCRIPT</h2>
+          <i class="fa-brands fa-js"></i>
         </div>
       </div>
-    </section> -->
-
-    <!-- LAPTOP\DESKTOP
-    <section class="dsk-projects">
-      <div class="card-one-dsk">
-        <img class="transition" src="website.png" alt="Website Project" />
-        <div class="info">
-          <span>Website Project</span>
-          <a href="https://mrawab.github.io/test.html" target="_blank"
-            >check out</a
-          >
-        </div>
-      </div>
-      <div class="card-one-dsk">
-        <img class="transition" src="telegram_bot.png" alt="Website Project" />
-        <div class="info">
-          <span>Telegram Project</span>
-          <a href="https://t.me/MRAWABBOT" target="_blank">check out</a>
-        </div>
-      </div>
-      <div class="card-one-dsk">
-        <img
-          class="transition"
-          src="wallpapersden.com_starry-sky-hd-dark-blue-night_2912x1632.jpg"
-          alt="Website Project"
-        />
-        <div class="info">
-          <span>TEST</span>
-          <a href="#" target="_blank">check out</a>
-        </div>
-      </div>
-    </section> -->
+    </section>
 
     <footer>
       <div class="social-links">
         <a
           href="https://www.linkedin.com/in/awab-azhari-98879930b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-        traget="_blank">
+        >
           <i id="twitter" class="fa-brands fa-linkedin transition"></i>
         </a>
-        <a href="https://github.com/mrawab" traget="_blank">
+        <a href="https://github.com/mrawab">
           <i id="github" class="fa-brands fa-github transition"></i>
         </a>
-        <a href="https://www.instagram.com/mr_awab_01" traget="_blank">
+        <a href="https://www.instagram.com/mr_awab_01">
           <i
             class="fa fa-instagram transition"
             id="instagram"
             aria-hidden="true"
           ></i>
         </a>
-        <a href="https://\.facebook.com/awabazharii?mibextid=ZbWKwL" traget="_blank">
+        <a href="https://\.facebook.com/awabazharii?mibextid=ZbWKwL">
           <i id="facebook" class="fa-brands fa-facebook transition"></i>
         </a>
       </div>
       <div>
-        <h3 title="All rights received">All rights received</h3>
-        <h3 title="Awab Azhari" >Awab Azhari</h3>
-        <h3 title="Copyright 2025">&copy;2025</h3>
+        <h3>All rights received</h3>
+        <h3>Awab Azhari</h3>
+        <h3>&copy;2025</h3>
       </div>
+      <a href="#landing-page">top <i class="fa-solid fa-arrow-up"></i></a href="#">
     </footer>
+
     <script src="main.js" defer></script>
   </body>
 </html>
