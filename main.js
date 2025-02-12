@@ -3,7 +3,7 @@
 //const hoverTwo = document.getElementById("project-two");
 const mobileHeader = document.getElementById("mobile-header");
 const overlay = document.getElementById("overlay");
-
+const coolinfo = document.getElementById("coolinfo");
 //projects
 /*function display_project_website() {
   hoverOne.style.opacity=1;
@@ -28,7 +28,9 @@ function hide_project_telegram_bot() {
   hoverTwo.style.transform='scale(1)';
   hoverTwo.style.visibility='hidden';
 }*/
-
+function showInfo(){
+  coolinfo.style.display="block";
+}
 //nav bar
 function show_nav_bar() {
   //mobileHeader.style.display = "flex";
@@ -37,7 +39,7 @@ function show_nav_bar() {
 }
 
 function hide_nav_bar() {
- // mobileHeader.style.display = "none"; 
+  // mobileHeader.style.display = "none";
   mobileHeader.classList.remove("show");
   overlay.style.display = "none";
 }
