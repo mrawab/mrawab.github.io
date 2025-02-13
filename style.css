@@ -394,6 +394,7 @@ footer h3 {
   text-align: center;
   margin: 5px;
   font-size: 15px;
+  color:white;
 }
 footer h3:nth-child(3) {
   text-align: center;
@@ -428,7 +429,7 @@ footer a:hover {
   margin: 40px;
   overflow: hidden;
   white-space: nowrap;
-  color: white;
+  color: black;
   width: 0;
   border-right: 2px solid white;
   font-size: 40px;
@@ -601,7 +602,6 @@ textarea {
   margin-left: 18px;
   padding: 5px;
   outline: none;
-  height: 100%;
   background: transparent;
   border-radius: 10px;
   color: white;
@@ -635,10 +635,12 @@ textarea {
 }
 .input-box input::placeholder,
 .input-box textarea::placeholder {
+  font-family: "Jersey 15", serif;
   color: white;
   font-size: 18px;
 }
 .form-buttons {
+  font-family: "Jersey 15", serif;
   justify-content: space-between;
   align-items: center;
   display: flex;
