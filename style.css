@@ -637,7 +637,7 @@ textarea {
   color: white !important;
 }
 #textbox i {
-  top: 100%;
+  top: 50%;
 }
 .input-box input::placeholder,
 .input-box textarea::placeholder {
