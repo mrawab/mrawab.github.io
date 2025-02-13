@@ -567,6 +567,7 @@ footer a:hover {
 }
 .form {
   backdrop-filter: blur(10px);
+  font-family: "Jersey 15", serif;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 25px 15px 25px 15px;
   width: 330px;
@@ -599,6 +600,8 @@ textarea {
   width: 75%;
   align-items: center;
   display: flex;
+  margin-top:5px;
+  margin-bottom:5px;
   margin-left: 18px;
   padding: 5px;
   outline: none;
@@ -609,6 +612,7 @@ textarea {
 }
 .input-box textarea {
   padding-bottom: 30px;
+  height:80%;
 }
 
 .input-box input:hover,
@@ -626,7 +630,7 @@ textarea {
 .input-box i {
   position: absolute;
   right: 42px;
-  top: 65%;
+  top: 69%;
   transform: translateY(-50%);
   color: white !important;
 }
