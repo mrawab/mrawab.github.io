@@ -605,14 +605,13 @@ textarea {
   margin-left: 18px;
   padding: 5px;
   outline: none;
-  height:100%;
   background: transparent;
   border-radius: 10px;
   color: white;
   transition: transform 0.5s;
 }
 .input-box textarea {
-  padding-bottom: 60px;
+  padding-bottom: 30px;
   height:80%;
 }
 
@@ -631,7 +630,7 @@ textarea {
 .input-box i {
   position: absolute;
   right: 42px;
-  top: 60%;
+  top: 50%;
   transform: translateY(-50%);
   color: white !important;
 }
