@@ -431,7 +431,7 @@ footer a:hover {
   white-space: nowrap;
   color: black;
   width: 0;
-  border-right: 2px solid white;
+  border-right: 2px solid black;
   font-size: 40px;
   animation: typing 1s ease-in forwards, blinking 1s infinite;
   /*animation: web-text 0.8s linear infinite alternate;
