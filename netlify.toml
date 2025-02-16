@@ -1,6 +1,4 @@
-[build]
-  publish = "public" # Change to "dist" or your build output folder if needed
-  command = "npm run build" # Modify if you're not using a build command
+
 
 [[redirects]]
   from = "/*"
