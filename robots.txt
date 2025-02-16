@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://awabazhari.netlify.app/sitemap.xml
