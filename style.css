@@ -116,6 +116,7 @@ a:hover {
     transform: translateX(0%);
   }
 }
+
 @keyframes appearRight {
   from {
     opacity: 0;
@@ -126,6 +127,7 @@ a:hover {
     transform: translateX(0%);
   }
 }
+
 @keyframes appearUp {
   from {
     opacity: 0;
@@ -136,6 +138,7 @@ a:hover {
     transform: translateY(0%);
   }
 }
+
 @keyframes appearDown {
   from {
     opacity: 0;
@@ -146,18 +149,38 @@ a:hover {
     transform: translateY(0%);
   }
 }
+
+.responsive-animation {
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
 .appear-left {
-  animation: appearLeft 1s ease;
+  animation: appearLeft 2s ease both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
 }
+
 .appear-right {
-  animation: appearRight 1s ease;
+  animation: appearRight 2s ease both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
+
 .appear-up {
-  animation: appearUp 1s ease;
+  animation: appearUp 1s ease both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
+
 .appear-down {
-  animation: appearDown 1s ease;
+  animation: appearDown 1s ease both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
+
 .typing-animation{
   overflow: hidden;
   white-space: nowrap;
@@ -417,11 +440,11 @@ footer a:hover {
 /* LANDING PAGE */
 .landing-page {
   position: relative;
-  color: #ffffff;
+  color: white;
   align-items: center;
   width: 100%;
   display: flex;
-  background-color: #fafaf7;
+  background-color: #1E1B1B;
   /* background: rgba(255, 255, 255, 0); */
   flex-direction: column;
 }
@@ -429,9 +452,9 @@ footer a:hover {
   margin: 40px;
   overflow: hidden;
   white-space: nowrap;
-  color: black;
+  color: white;
   width: 0;
-  border-right: 2px solid black;
+  border-right: 2px solid wheat;
   font-size: 40px;
   animation: typing 1s ease-in forwards, blinking 1s infinite;
   /*animation: web-text 0.8s linear infinite alternate;
@@ -451,7 +474,8 @@ footer a:hover {
   transition: 0.5s;
 }
 .aboutme {
-  background-color: #ffffff;
+  background-color: #212020;
+  color:white;
   width: 100%;
   display: flex;
   align-items: center;
@@ -485,38 +509,9 @@ footer a:hover {
   font-family:sans-serif;
 }
 
-.run button{
-  user-select: none;
-  padding: 10px 20px;
-  margin: 20px;
-  font-size: 20px;
-  border-radius: 10px;
-  outline: none;
-  box-shadow: none;
-  border: none;
-  transition: all 0.3s ease;
-}
-.run button:hover{
-  animation: upbutton 1s  ease;
-  border-radius: 15px;
-  background-color: #f52e1b;
-  outline: none;
-  box-shadow: none;
-  border: none;
-}
-.run button:active{
-  background-color: #fd5949;
-  border-radius: 15px;
-  outline: none;
-  box-shadow: none;
-  border: none;
-  animation: rotatebutton 2s infinite ease;
-}
-.run button:focus{
-  background-color: #f52e1b;
-}
 .coolinfo{
-  display: none;
+  color:white;
+  display: block;
   border: 2px grey solid;
   margin: 10px;
   width: 80%;
@@ -547,6 +542,7 @@ footer a:hover {
 .skills i{
   font-size: 50px;
   margin: 10px;
+  text-align: center;
 }
 
 /* CONTACT PAGE */
