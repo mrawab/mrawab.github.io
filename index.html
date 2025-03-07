@@ -26,7 +26,8 @@
     <meta name="twitter:description" content="Official website of Awab Azhari, showcasing projects, research, and tech insights.">
     <meta name="twitter:image" content="https://awabazhari.com/preview.jpg">
 
-    <link rel="icon" href="website_icon.ico" type="image/x-icon">
+    <!-- Favicon
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
@@ -49,11 +50,11 @@
           </li>
           <li>
             <button title="close menu" onclick="hide_nav_bar()">
-              <i style="font-size: 20px" class="fa-solid fa-xmark"></i>
+              <i style="font-size: 18px" class="fa-solid fa-xmark"></i>
             </button>
           </li>
         </ul>
-        <ul class="main-nav">
+        <ul class="main-nav" id="main-nav">
           <li id="about-icon">
             <a onclick="hide_nav_bar()" href="#aboutme" title="about me">About Me</a
             ><i class="fa-solid fa-circle-info"></i>
@@ -89,6 +90,7 @@
             </a>
           </div>
         </div>
+        <div class="hide-on-desktop" onclick="hide_nav_bar()" id="overlay"></div>
       </nav>
 
       <!-- DESKTOP NAV -->
@@ -129,9 +131,10 @@
         class="profile transition"
         title="profile photo"
         src="profile-photo.webp"
-        alt="profile photo
+        alt="profile photo"
+        loading="lazy"
         height="60%"
-      />
+        />
     </main>
  
     <section id="aboutme" class="aboutme">
