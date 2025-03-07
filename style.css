@@ -228,7 +228,7 @@ a:hover {
   top: 0;
   right: -100%;
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.5);
   transition: right 0.4s ease-in-out;
 }
 .mobile-header.show {
@@ -238,9 +238,12 @@ a:hover {
   right: -100%;
 }
 .mobile-header li {
+  z-index:2;
   display: flex;
   align-items: center;
   justify-content: center;
+  list-style-type: none;
+  transition: all 0.5s ease-in-out;
 }
 .main-title {
   height: 10%;
@@ -250,27 +253,24 @@ a:hover {
   justify-content: center;
 }
 .main-title li {
-  margin: 40px;
-}
-.mobile-header li {
-  list-style: none;
-  transition: all 0.3s ease;
+  /*margin: 40px;*/
 }
 
 .main-nav {
-  border-top: 2px solid lightgray;
+  border-top: 2px solid whitesmoke;
   margin: 0 50px;
   height: 80%;
-  list-style: none;
+  list-style-type: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: all 0.5s;
-  border-bottom: 2px solid lightgray;
+  border-bottom: 2px solid whitesmoke;
 }
 
 .main-nav li a {
+  transition: all 0.5s;
   font-size: 20px;
 }
 #about-icon {
@@ -364,6 +364,7 @@ transition: --fill 0.1s ease-in-out;
   height: 10%;
 }
 .social-links-nav i {
+  z-index:2;
   color: white;
   padding: 5px;
   justify-content: space-between;
@@ -371,10 +372,9 @@ transition: --fill 0.1s ease-in-out;
   position: relative;
 }
 #overlay {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color:rgba(0,0,0,0.5);
   position: fixed;
   inset: 0;
-  z-index: 9;
   display: none;
 }
 .main-nav li {
@@ -382,25 +382,30 @@ transition: --fill 0.1s ease-in-out;
   transform: scale(0.8);
   font-style: normal;
 }
-.main-nav li:active {
+@keyframes bounse{
+  from{
+    transform:translateY(0);
+  }
+  to{
+    transform:translateY(10px);
+  }
+}
+.main-nav li:active{
   opacity: 1;
   transform: scale(1);
   font-style: bold;
 }
-.main-nav:has(:active) :not(:active) {
+/*.main-nav:has(:active) :not(:active) {
   opacity: 0.5;
   transform: scale(0.8);
   font-style: normal;
-}
+}*/
 .main-nav .active {
   opacity: 1;
   transform: scale(1);
   font-style: bold;
 }
-/*.main-nav:has(:hover) :not(:hover) {
-  transform: scale(0.8);
-  opacity: 0.5;
-}*/
+
 /* FOOTER */
 footer {
   width: 100%;
@@ -609,6 +614,9 @@ textarea {
 .input-box textarea {
   padding-bottom: 35px;
   height:80%;
+}
+textarea{
+  field-sizing:content;
 }
 
 .input-box input:hover,
