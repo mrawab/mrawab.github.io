@@ -28,6 +28,7 @@ function hide_project_telegram_bot() {
   hoverTwo.style.transform='scale(1)';
   hoverTwo.style.visibility='hidden';
 }*/
+
 function showInfo(){
   coolinfo.style.display="block";
 }
@@ -36,10 +37,12 @@ function show_nav_bar() {
   //mobileHeader.style.display = "flex";
   mobileHeader.classList.add("show");
   overlay.style.display = "block";
+  document.body.style.overflow="hidden";
 }
 
 function hide_nav_bar() {
   // mobileHeader.style.display = "none";
   mobileHeader.classList.remove("show");
   overlay.style.display = "none";
+  document.body.style.overflow="";
 }
