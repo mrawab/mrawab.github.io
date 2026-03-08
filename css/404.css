@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jersey 25", sans-serif;
+}
+body {
+  overflow: hidden;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div img {
+  position: absolute;
+  top: -4%;
+  left: 12%;
+  width: 490px;
+  transform: translate(-500px, -500px);
+  animation: down 1.3s forwards ease-in;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.parachute-loader {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #111;
+  font-family: sans-serif;
+}
+
+.parachute-loader .wind-line {
+  position: absolute;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  bottom: -50px;
+  animation: windUp 0.8s linear infinite;
+}
+
+.parachute-loader .wind-1 {
+  left: 20%;
+  height: 40px;
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+}
+.parachute-loader .wind-2 {
+  left: 80%;
+  height: 60px;
+  animation-delay: 0.2s;
+  animation-duration: 0.7s;
+}
+.parachute-loader .wind-3 {
+  left: 10%;
+  height: 30px;
+  animation-delay: 0.4s;
+  animation-duration: 0.6s;
+}
+.parachute-loader .wind-4 {
+  left: 90%;
+  height: 50px;
+  animation-delay: 0.1s;
+  animation-duration: 0.8s;
+}
+.parachute-loader .wind-5 {
+  left: 50%;
+  height: 25px;
+  animation-delay: 0.5s;
+  animation-duration: 0.4s;
+}
+
+.parachute-loader .cloud {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  bottom: -100px;
+  opacity: 0.8;
+  animation: moveCloudsUp 3s linear infinite;
+}
+
+.parachute-loader .cloud::after,
+.parachute-loader .cloud::before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.parachute-loader .cloud-1 {
+  width: 60px;
+  height: 60px;
+  left: 10%;
+  animation-duration: 2.5s;
+}
+.parachute-loader .cloud-1::after {
+  width: 40px;
+  height: 40px;
+  top: -20px;
+  left: 10px;
+}
+.parachute-loader .cloud-1::before {
+  width: 50px;
+  height: 50px;
+  top: -10px;
+  left: 30px;
+}
+
+.parachute-loader .cloud-2 {
+  width: 80px;
+  height: 80px;
+  right: 15%;
+  animation-duration: 3.2s;
+  animation-delay: 1s;
+  opacity: 0.6;
+}
+.parachute-loader .cloud-2::after {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 15px;
+}
+.parachute-loader .cloud-2::before {
+  width: 60px;
+  height: 60px;
+  top: -15px;
+  left: 40px;
+}
+
+.parachute-loader .parachutist-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 220px;
+  animation: sway 3s ease-in-out infinite;
+  z-index: 10;
+}
+
+.parachute-loader .parachute-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.1));
+}
+
+.parachute-loader .loading-text p {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  animation: pulse 1.5s infinite;
+  z-index: 20;
+}
+.loading-text p:nth-child(1) {
+  top: 15%;
+  font-size: 3rem;
+}
+.loading-text p:nth-child(2) {
+  bottom: 10%;
+  font-size: 2rem;
+  animation: none;
+}
+.button {
+  background-color: #ffffff00;
+  color: #fff;
+  width: 12.3rem;
+  height: 4rem;
+  border: #6c6d72 2px solid;
+  font-size: 1.3rem;
+  border-radius: 12px;
+  text-align: right;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+}
+.loading-text a button:has(:hover) ~ .parachute-loader .wind-line {
+  animation-play-state: paused;
+}
+.button svg {
+  width: 1.6em;
+  margin: -0.2em 0.8em 1em;
+  position: absolute;
+  display: flex;
+  transition: all 0.6s ease;
+}
+
+.button:hover svg {
+  transform: translateX(5px);
+}
+
+.text {
+  margin: 0 1.5em;
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  border: 1px rgb(62, 53, 53) solid;
+  background-color: gray;
+  border-radius: 15px 10px 15px 10px;
+  transition: all 0.2s linear;
+  font-size: 1.3rem;
+}
+button:hover {
+  background-color: green;
+  transform: translateY(-5px);
+  border-radius: 10px 15px 10px 15px;
+  color: antiquewhite;
+  cursor: pointer;
+}
+button:active {
+  transform: translateY(5px);
+}
+@keyframes sway {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+  50% {
+    transform: translate(-50%, -45%) rotate(5deg);
+  }
+}
+
+@keyframes moveCloudsUp {
+  0% {
+    bottom: -100px;
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    bottom: 350px;
+    opacity: 0;
+  }
+}
+
+@keyframes windUp {
+  0% {
+    bottom: -60px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 350px;
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
