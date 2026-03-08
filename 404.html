@@ -2,94 +2,111 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="website_icon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/404.css">
     <title>404</title>
-
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        min-height:100vh;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        background-color: white;
-        background-image: url("main-background.webp");
-        background-position: center;
-        background-size: cover;
-        background-repeat: main-background.webpno-repeat;
-        background-attachment: fixed;
-        color: aliceblue;
-        animation: appear 0.5s ease-in;
-      }
-      body a,
-      p {
-        color: aliceblue;
-        font-size: 20px;
-        transition: all 0.5s ease;
-      }
-      body a:hover{
-        background:linear-gradient(to right,rgb(236, 240, 3),rgb(14, 243, 7));
-        background-clip: text;
-        color: transparent;
-        transform: scale(2);
-      }
-      div{
-        background-color: rgba(255,255,255,0.05);
-        backdrop-filter: blur(5px);
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: column;
-        width: 400px;
-        padding: 20px;
-        place-items:center;
-        border-radius: 25px;
-        animation: border-effect 5s ease-in-out;
-      }
-      h1, h2{
-        position: relative;
-        text-align:center;
-      }
-      @keyframes appear {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }  
-        @keyframes border-effect {
-        0% {
-          border-radius: 0px;
-        }
-        20% {
-            border-radius: 25px;
-        }
-        40% {
-            border-radius: 10px;
-        }
-        60% {
-            border-radius: 30px;
-        }
-        80% {
-            border-radius: 5px;
-        }
-        100% {
-            border-radius: 25px;
-        }
-
-      }
-    </style>
   </head>
   <body>
-    <div>
-        <h1><b>Oh Sorry!</b></h1>
-        <h1><b>404</b></h1>
-        <h3>Sounds like the page not available</h3>
-        <p>Would like to go <a href="loading.html">home</a>?</p>
+    <div class="parachute-loader">
+      <div class="wind-line wind-1"></div>
+      <div class="wind-line wind-2"></div>
+      <div class="wind-line wind-3"></div>
+      <div class="wind-line wind-4"></div>
+      <div class="wind-line wind-5"></div>
+      <div class="cloud cloud-1"></div>
+      <div class="cloud cloud-2"></div>
+
+      <div class="parachutist-wrapper">
+        <svg
+          class="parachute-svg"
+          viewBox="0 0 100 120"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="10"
+            y1="40"
+            x2="45"
+            y2="80"
+            stroke="#eee"
+            stroke-width="2"
+          ></line>
+          <line
+            x1="90"
+            y1="40"
+            x2="55"
+            y2="80"
+            stroke="#eee"
+            stroke-width="2"
+          ></line>
+          <line
+            x1="50"
+            y1="35"
+            x2="50"
+            y2="80"
+            stroke="#eee"
+            stroke-width="2"
+          ></line>
+
+          <path d="M 10 40 Q 50 -10 90 40 Z" fill="#FF6B6B"></path>
+          <path
+            d="M 30 28 Q 50 0 70 28 L 50 35 Z"
+            fill="#FFFFFF"
+            opacity="0.3"
+          ></path>
+
+          <circle cx="50" cy="85" r="8" fill="#FFFFFF"></circle>
+          <rect
+            x="42"
+            y="93"
+            width="16"
+            height="20"
+            rx="5"
+            fill="#1E90FF"
+          ></rect>
+          <path
+            d="M 42 95 L 30 85"
+            stroke="#000000"
+            stroke-width="3"
+            stroke-linecap="round"
+          ></path>
+          <path
+            d="M 58 95 L 70 85"
+            stroke="#000000"
+            stroke-width="3"
+            stroke-linecap="round"
+          ></path>
+          <path
+            d="M 45 113 L 40 120"
+            stroke="#000000"
+            stroke-width="3"
+            stroke-linecap="round"
+          ></path>
+          <path
+            d="M 55 113 L 60 120"
+            stroke="#000000"
+            stroke-width="3"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="loading-text">
+        <p>404 Not Found</p>
+        <p>
+          <!-- From Uiverse.io by reshades -->
+
+          <a href="/html/index.html">
+            <button>Return Home</button>
+          </a>
+        </p>
+      </div>
     </div>
+
+    <!-- <button><a href="/html/index.html">Return Home</a></button> -->
   </body>
 </html>
