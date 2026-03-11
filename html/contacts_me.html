@@ -82,18 +82,37 @@
   <style>
     .send-button {
       background-color: gray;
+      border-radius: 10px;
+    }
+
+    .send-button:hover {
+      border-radius: 10px;
     }
 
     .send-button::before {
-      content: "submit";
+      content: "Submit";
     }
 
     .send-button:focus::before {
-      content: "submitted";
+      content: "Submitted";
     }
 
     .button.primary {
       background-color: green;
+    }
+
+    @media (max-width: 2260px) {
+      .send-button {
+        font-size: 16px;
+      }
+
+      .send-button::after {
+        right: 8%;
+      }
+
+      .button {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
@@ -159,7 +178,6 @@
 
       <div id="textbox" class="input-box">
         <textarea id="" cols="30" rows="10" name="message" placeholder="Message" required=""></textarea>
-        <i class="fa-solid fa-comment"></i>
       </div>
 
       <div class="form-button">
