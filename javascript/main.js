@@ -1,15 +1,16 @@
 const textarea = document.querySelector(".input-box textarea");
-
-document.querySelectorAll("textarea").forEach((textarea) => {
-  textarea.addEventListener("input", function () {
-    this.style.height = "90px";
-    this.style.height = this.scrollHeight + "px";
-  });
-});
+const toggle = document.querySelector(".mobile-menu-toggle");
+const closeBtn = document.querySelector(".mobile-menu-close");
+const header = document.querySelector(".mobile-header");
+const overlay = document.querySelector(".overlay");
+// const mobileWarning = document.querySelector("#mobile-warning");
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (isMobile() || window.innerWidth < 768) {
-    document.getElementById("mobile-warning").style.display = "flex";
+  if (
+    (isMobile() || window.innerWidth < 768) &&
+    !window.location.pathname.includes("mobile.html")
+  ) {
+    window.location.href = "/html/mobile.html";
   }
 });
 
@@ -19,12 +20,24 @@ function isMobile() {
   );
 }
 
-if (isMobile() || window.innerWidth < 768) {
-  const warning = document.getElementById("mobile-warning");
+toggle.addEventListener("click", () => {
+  header.classList.add("open");
+  overlay.classList.add("open");
+});
 
-  if (warning) {
-    warning.style.display = "flex";
-    document.body.style.overflow = "hidden";
-    console.log("Mobile warning displayed");
-  }
-}
+closeBtn.addEventListener("click", () => {
+  header.classList.remove("open");
+  overlay.classList.remove("open");
+});
+
+overlay.addEventListener("click", () => {
+  header.classList.remove("open");
+  overlay.classList.remove("open");
+});
+
+document.querySelectorAll("textarea").forEach((textarea) => {
+  textarea.addEventListener("input", function () {
+    this.style.height = "90px";
+    this.style.height = this.scrollHeight + "px";
+  });
+});
