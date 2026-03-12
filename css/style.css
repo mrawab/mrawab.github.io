@@ -17,7 +17,7 @@ body {
 }
 
 #mobile-warning {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -28,7 +28,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 24px;
+  font-size: 26px;
   z-index: 9999;
   padding: 20px;
 }
@@ -1279,55 +1279,5 @@ footer .social-contact .social-button button:active {
   footer .footer-text {
     line-height: 1.5;
     font-size: 1.4rem;
-  }
-}
-
-/* small devices */
-@media (max-width: 768px) {
-  .desktop-header {
-    display: none;
-  }
-  /* #mobile-warning {
-    display: flex;
-  } */
-  .hide-on-desktop {
-    display: flex;
-  }
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero .main-text {
-    width: 100%;
-    margin-bottom: 0px;
-  }
-  .about .about-content {
-    flex-direction: column;
-    text-align: start;
-  }
-  .about .about-content .main-text {
-    margin-right: 0px;
-    margin-bottom: 20px;
-  }
-
-  /* Skills section mobile adjustments */
-  .skills-content {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    padding: 0 10px;
-  }
-
-  .skill-card {
-    max-width: 180px;
-    height: 200px;
-    font-size: 1.2rem;
-  }
-
-  .skill-card i {
-    font-size: 2.5rem;
-  }
-
-  .skill-card p {
-    font-size: 1rem;
   }
 }
