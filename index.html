@@ -73,6 +73,22 @@
   <!-- Canonical URL -->
   <link rel="canonical" href="https://awabazhari.netlify.app/" />
 
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (
+        (isMobile() || window.innerWidth < 768) &&
+        !window.location.pathname.includes("mobile.html")
+      ) {
+        window.location.href = "/html/mobile.html";
+      }
+    });
+
+    function isMobile() {
+      return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
+        navigator.userAgent,
+      );
+    }
+  </script>
   <title>Awab Azhari - Electronics Engineer & Web Developer</title>
 </head>
 
@@ -255,7 +271,7 @@
         <a class="animate-color-social-links" id="github" href="https://github.com/mrawab" target="_blank"><i
             class="fa-brands fa-github"></i></i></a>
         <a class="animate-color-social-links" id="facebook" href="https://web.facebook.com/awabazharii"
-          target="_blank"><i class="fa-brands fa-facebook-f"></i></i></a>
+          target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
         <a class="animate-color-social-links" id="linkedin"
           href="https://www.linkedin.com/in/awab-azhari-98879930b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
