@@ -93,9 +93,10 @@
                     <li><button class="mobile-menu-close" aria-label="Toggle navigation menu">
                             <i class="fa-solid fa-xmark"></i>
                         </button></li>
-                    <li><a href="/html/mobile.html">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact_me">Contact</a></li>
+                    <li><a id="home" href="/html/mobile.html">Home</a></li>
+                    <li><a id="about-button" href="#about">About</a></li>
+                    <li><a id="project-button" href="#projects">Projects</a></li>
+                    <li><a id="contact-button" href="/html/contact_me_mobile.html">Contact</a></li>
                 </ul>
                 <ul class="social-links">
                     <li><a class="animate-color-social-links" id="github" href="https://github.com/mrawab"
@@ -119,9 +120,146 @@
         </div>
     </header>
 
-    <div id="mobile-warning" style="display:flex;">
+    <div id="mobile-warning" style="display:none;">
         This site is not ready for mobile users yet. Please use a desktop device.
     </div>
+
+    <!-- LANDING PAGE -->
+
+    <main class="mobile-hero">
+        <img src="/images/awab_azhari.webp" alt="Awab Azhari">
+        <div class="personal-info">
+            <h1>Awab Azhari</h1>
+            <p>Electronics Engineer & Web Developer</p>
+        </div>
+        <div class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Khartoum, Sudan</span>
+        </div>
+        <div class="contact-info">
+            <button><a href="/html/contact_me_mobile.html">Contact Me</a></button>
+            <button><a href="/files/resume.pdf" download>Download Resume</a></button>
+        </div>
+    </main>
+
+    <!-- ABOUT -->
+    <!-- <hr> -->
+
+    <section id="about">
+        <section class="mobile-column-flex">
+            <div class="mobile-side-flex">
+                <i class="fa-regular fa-user"></i>
+                <h2>About Me</h2>
+            </div>
+            <div class="mobile-about-description">
+                <p>
+                    I am an Electronics Engineer and Web Developer with a passion for creating innovative solutions and
+                    modern web applications. With a strong background in electronics and programming, I specialize in
+                    developing efficient and user-friendly websites that meet the needs of clients and users alike.
+                </p>
+            </div>
+        </section>
+        <section class="mobile-column-flex">
+            <div class="mobile-side-flex">
+                <i class="fa-solid fa-code-branch"></i>
+                <h2>Skills</h2>
+            </div>
+            <div class="mobile-expertise-content">
+                <div class="mobile-card">
+                    <i class="fa-brands fa-html5"></i>
+                    <p>HTML</p>
+                </div>
+                <div class="mobile-card">
+                    <i class="fa-brands fa-css3"></i>
+                    <p>CSS3</p>
+                </div>
+                <div class="mobile-card">
+                    <i class="fa-brands fa-square-js"></i>
+                    <p>JAVASCRIPT</p>
+                </div>
+                <div class="mobile-card">
+                    <i class="fa-brands fa-python"></i>
+                    <p>PYTHON</p>
+                </div>
+                <div class="mobile-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path
+                            d="M525.5 300.3L387.7 438.1L525.5 576L368 576C331.9 539.9 285.9 493.9 230.1 438.1L368 300.3L525.5 300.3zM368 64L112 320L190.8 398.8L525.5 64L368 64z" />
+                    </svg>
+                    <p>FLUTTER</p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+        <section class="mobile-column-flex projects-section">
+            <div class="mobile-side-flex">
+                <i class="fa-solid fa-diagram-project"></i>
+                <h2>Projects</h2>
+            </div>
+            <div class="edyou-org">
+                <h3>Edyou Organization</h3>
+
+                <!-- PROJECT 1 -->
+                <div class="project-card">
+                    <img src="/images/study_bot_project_1.png" alt="Edyou Study Companion">
+                    <div class="tech-used">
+                        <p>python</p>
+                    </div>
+                    <h4>Edyou Study Companion Bot</h4>
+                    <p>A Telegram bot that serves as a study companion for students, providing features such as
+                        flashcards, quizzes, and resource organization to enhance their learning experience.
+                    </p>
+                    <div class="project-details">
+                        <a href="https:t.me/MRAWABBOT" target="_blank">Open Telegram</a>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="project-card">
+                <img src="/images/study_bot_project_2.png" alt="Edyou Study Companion">
+                <div class="tech-used">
+                    <p>html</p>
+                    <p>css</p>
+                    <p>javascript</p>
+                    <p>python</p>
+                </div>
+                <h4>Edyou Study Companion Site</h4>
+                <p>A web application that provides students with a comprehensive study companion, including
+                    lecture access,
+                    smart quizzes, and flashcards.</p>
+                <div class="project-details">
+                    <a href="https://studybot.viewdns.net/" target="_blank">View Website</a>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="project-card">
+                <img src="/images/study_bot_project_3.png" alt="Edyou Study Companion">
+                <div class="tech-used">
+                    <p>flutter</p>
+                    <p>dart</p>
+                    <p>pdfx</p>
+                </div>
+                <h4>Edyou Study Companion App</h4>
+                <p>A mobile application that provides students with a comprehensive study companion, including
+                    lecture download,
+                    pdf tools, and ocr text extractor.</p>
+                <div class="project-details">
+                    <a href="https://studybot.viewdns.net/#app-download" target="_blank">Download App</a>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+
+        </section>
+    </section>
     <script src="/javascript/main.js" defer></script>
 </body>
 
