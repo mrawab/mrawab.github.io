@@ -59,6 +59,7 @@
         as="font" type="font/woff2" crossorigin="anonymous" />
 
     <!-- Stylesheets -->
+    <!-- <link rel="stylesheet" href="https://edyou-study.github.io/awcss-docs/awcss/awcss.css"> -->
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/mstyle.css">
 
@@ -84,8 +85,8 @@
                 flex-direction: row-reverse;">
                 <a class="mobile-logo">
                     <h1 style="
-                    margin-right: 113px;
-                    ">Contact Me</h1>
+                    margin-right: 140px;
+                    ">Hire Me</h1>
                 </a>
                 <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
                     <a href="/html/mobile.html"><i class="fa-solid fa-arrow-left"></i></a>
@@ -94,11 +95,68 @@
         </div>
     </header>
 
-    <div id="mobile-warning" style="display:flex;">
+    <div id="mobile-warning" style="display:none;">
         This page is not ready for users yet.
     </div>
 
     <body>
+        <form id="form" class="form-mobile" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="cb7aaa96-b5ca-4e17-a172-030a1636757d">
+            <input type="hidden" name="redirect" value="https://awabazhari.netlify.app/submit_mobile.html">
+            <input id="message" type="hidden" name="subject">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <h1>Contact Me</h1>
+
+            <div class="input-box">
+                <input type="text" maxlength="50" name="username" id="username" placeholder="Name" required>
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="input-box">
+                <input type="email" name="email" placeholder="Email" required>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <div id="textbox" class="input-box">
+                <textarea id="" cols="30" rows="10" name="message" placeholder="Message" required=""></textarea>
+            </div>
+
+            <div class="form-button">
+                <button class="send-button"></button>
+                <a href="/html/index.html" class="button primary">Home</a>
+            </div>
+        </form>
+        <footer class="mobile-footer">
+            <div class="mobile-footer-text">
+                <h2>awab azhari</h2>
+                <p>all rights reserved 2026 &copy;</p>
+            </div>
+            <div class="mobile-social-contact">
+                <ul class="social-links">
+                    <li><a class="animate-color-social-links" id="github-footer" href="https://github.com/mrawab"
+                            target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a class="animate-color-social-links" id="facebook-footer"
+                            href="https://web.facebook.com/awabazharii" target="_blank"><i
+                                class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a class="animate-color-social-links" id="linkedin-footer"
+                            href="https://www.linkedin.com/in/awab-azhari-98879930b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    <li><a class="animate-color-social-links" id="instagram-footer"
+                            href="https://www.instagram.com/mr_awab_01" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a></li>
+                    <li>
+                        <a class="animate-color-social-links" id="x-twitter-footer" href="https://x.com/awabazharii"
+                            target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-twitter-x"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
     </body>
 
 </html>
