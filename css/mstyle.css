@@ -1,6 +1,6 @@
 body {
   display: flex;
-  height: 100dvh;
+  min-height: 100dvh;
   flex-direction: column;
   background-color: #1a1a1a;
 }
@@ -240,29 +240,29 @@ button:hover {
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 }
 
-.mobile-card:nth-child(1) {
+.mobile-card:nth-child(1),
+.mobile-card:nth-child(2) {
   --progress: 100%;
   --color: #07e13a;
-}
-.mobile-card:nth-child(2) {
-  --progress: 75%;
-  --color: #04f0a1;
 }
 .mobile-card:nth-child(3) {
-  --progress: 20%;
-  --color: #ff2a00;
+  --progress: 75%;
+  --color: #ccff00;
 }
 .mobile-card:nth-child(4) {
-  --progress: 100%;
-  --color: #07e13a;
-}
-.mobile-card:nth-child(5) {
   --progress: 35%;
   --color: #ff7a00;
+}
+.mobile-card:nth-child(5) {
+  --progress: 20%;
+  --color: #ff2a00;
 }
 
 .mobile-card:last-child:nth-child(odd) {
@@ -342,11 +342,14 @@ button:hover {
 .tech-used {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .tech-used p {
-  font-size: 16px;
+  font-size: 18px;
   color: #9ca3af;
   padding: 5px 10px;
   background-color: #000000;
@@ -372,4 +375,266 @@ button:hover {
   text-align: center;
   transform: translateY(1px);
   transition: all 0.3s ease-in-out;
+}
+
+/* Contact Form Mobile */
+.form-mobile {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 25px;
+  background-color: #1a1a1a;
+  color: #fff;
+  gap: 20px;
+}
+
+.form-mobile h1 {
+  font-size: 32px;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.form-mobile .input-box {
+  position: relative;
+  width: 100%;
+}
+
+.form-mobile .input-box input,
+.form-mobile .input-box textarea {
+  width: 100%;
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  color: #fff;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-mobile .input-box input:focus,
+.form-mobile .input-box textarea:focus {
+  border-color: #3b82f6;
+}
+
+.form-mobile .input-box input {
+  padding-right: 45px;
+}
+
+.form-mobile .input-box textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-mobile .input-box i {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 18px;
+}
+
+.form-mobile .form-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.form-mobile .form-button button,
+.form-mobile .form-button a.button {
+  width: 100%;
+  padding: 15px 5px;
+  border-radius: 10px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+.send-button {
+  background-color: #262626;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.send-button:hover {
+  border-radius: 10px;
+}
+
+.send-button::before {
+  content: "Submit";
+}
+
+.send-button:focus::before {
+  content: "Submitted";
+}
+.send-button:focus {
+  background-color: green;
+  color: #fff;
+}
+.button.primary {
+  background-color: green;
+  font-size: 18px;
+}
+
+.form-mobile .form-button button:hover,
+.form-mobile .form-button a.button:hover {
+  transform: translate(0px, 4px);
+}
+
+/* Mobile Footer */
+.mobile-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+  gap: 20px;
+  border-top: 1px solid #1a1a1a;
+  margin-top: 20px;
+}
+
+.mobile-footer-text {
+  text-align: center;
+}
+
+.mobile-footer-text h2 {
+  font-size: 26px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.mobile-footer-text p {
+  color: #9ca3af;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.mobile-social-contact .social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mobile-social-contact .social-links a {
+  color: #fff;
+  font-size: 22px;
+}
+
+.mobile-social-contact .social-links a svg {
+  width: 22px;
+  height: 22px;
+  transform: translateY(2px);
+}
+
+.to-top {
+  left: 87%;
+}
+
+/* Timeline Tree UI */
+.timeline-first {
+  position: relative;
+}
+.timeline-first::before {
+  content: "";
+  position: absolute;
+  top: 63px;
+  bottom: 0;
+  left: 10px;
+  width: 12px;
+  border-top: 2px solid #4b5563;
+  border-left: 2px solid #4b5563;
+  border-top-left-radius: 15px;
+  background-color: transparent;
+  z-index: 10;
+  pointer-events: none;
+}
+.timeline-first::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 23px;
+  width: 8px;
+  height: 13px;
+  border-right: 2px solid #4b5563;
+  border-bottom: 2px solid #4b5563;
+  border-bottom-right-radius: 15px;
+  background-color: transparent;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.timeline-middle {
+  position: relative;
+}
+.timeline-middle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  width: 2px;
+  background-color: #4b5563;
+  z-index: 10;
+  pointer-events: none;
+}
+.timeline-middle::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  width: 16px;
+  height: 2px;
+  background-color: #4b5563;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.timeline-last {
+  position: relative;
+}
+.timeline-last::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 13px;
+  height: 36.5px;
+  border-left: 2px solid #4b5563;
+  border-bottom: 2px solid #4b5563;
+  border-bottom-left-radius: 15px;
+  background-color: transparent;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.edyou-org::before {
+  content: "";
+  position: absolute;
+  top: 49px;
+  left: 34px;
+  width: 39px;
+  height: 46px;
+  border-left: 2px solid #4b5563;
+  border-bottom: 2px solid #4b5563;
+  border-bottom-left-radius: 12px;
+  background-color: transparent;
+  z-index: 10;
+  pointer-events: none;
 }
